@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Labor OTP Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden font-display text-[#0d131b] dark:text-white">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-800">
+<h2 class="text-[#0d131b] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1">Labor Login</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary/10 dark:bg-primary/20 text-primary gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">call</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto">
+<!-- Hero / Logo Area -->
+<div class="@container">
+<div class="@[480px]:px-4 @[480px]:py-6 py-6 px-4 flex justify-center">
+<div class="w-full max-w-[200px] aspect-square bg-center bg-no-repeat bg-contain flex flex-col justify-end overflow-hidden" data-alt="Minimalist construction worker helmet and gear illustration" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKjUyvmZffw8g8iO6gtjZCZrOmhOvV7ymzMzTPZripcuIL5euZVbWVdlcF3OaBXWB5rpsN8f9erIkKsIygivsCQmURphdcoW-GmiIgP1P_w8eK6YASy7MrZxGXjRCnv0mqJu-cdnfzze0kNxdl58jfGnbyKrucMYjH94zXNCOlp8pUVNQVzrpxN0mPuAkGGspwLIq-IbPZv_vU1pe0jpXZlCmnqEUCLE4Hjep30bo60jwao7KTeTxKTLUTbO42lBo27T70vT0znivP"); border-radius: 50%; width: 120px; height: 120px;'>
+</div>
+</div>
+</div>
+<!-- Header Text -->
+<div class="flex flex-col items-center">
+<h2 class="text-[#0d131b] dark:text-white tracking-tight text-[28px] font-bold leading-tight px-4 text-center pt-2">
+                    Enter Mobile Number
+                </h2>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal pb-6 pt-2 px-6 text-center max-w-md">
+                    We will send you a 4 digit verification code to verify your identity.
+                </p>
+</div>
+<!-- Input Form -->
+<div class="w-full max-w-[480px] mx-auto px-4 flex flex-col gap-6">
+<!-- Mobile Number Field -->
+<div class="flex flex-col gap-2">
+<label class="text-[#0d131b] dark:text-gray-200 text-base font-medium leading-normal">
+                        Mobile Number
+                    </label>
+<div class="flex items-center gap-3">
+<div class="flex h-14 w-[70px] items-center justify-center rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-gray-800 text-lg font-medium text-[#0d131b] dark:text-white">
+                            +91
+                        </div>
+<input class="form-input flex-1 h-14 w-full rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-gray-800 px-4 text-lg font-medium text-[#0d131b] dark:text-white placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="98765 43210" type="tel" value="98765 00001"/>
+</div>
+</div>
+<!-- OTP Input Section (Hidden initially, visible for this state) -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex justify-between items-center">
+<label class="text-[#0d131b] dark:text-gray-200 text-base font-medium leading-normal">
+                            Enter OTP
+                        </label>
+<span class="text-primary text-sm font-medium cursor-pointer">Resend Code</span>
+</div>
+<div class="flex justify-between gap-3">
+<input class="h-14 w-14 flex-1 rounded-lg border-2 border-primary bg-primary/5 dark:bg-primary/10 text-center text-2xl font-bold text-[#0d131b] dark:text-white focus:border-primary focus:outline-none focus:ring-0" maxlength="1" type="text" value="4"/>
+<input class="h-14 w-14 flex-1 rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-gray-800 text-center text-2xl font-bold text-[#0d131b] dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" maxlength="1" type="text"/>
+<input class="h-14 w-14 flex-1 rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-gray-800 text-center text-2xl font-bold text-[#0d131b] dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" maxlength="1" type="text"/>
+<input class="h-14 w-14 flex-1 rounded-lg border border-[#cfd9e7] dark:border-gray-700 bg-white dark:bg-gray-800 text-center text-2xl font-bold text-[#0d131b] dark:text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" maxlength="1" type="text"/>
+</div>
+<p class="text-gray-400 text-sm mt-1 text-center">00:24 remaining</p>
+</div>
+<!-- Action Button -->
+<div class="pt-4 pb-8">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-14 px-4 text-lg font-bold text-white shadow-sm hover:bg-blue-600 active:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                        Login
+                    </button>
+</div>
+</div>
+<!-- Bottom Spacer -->
+<div class="h-10"></div>
+</div>
+<!-- Footer Help -->
+<div class="bg-background-light dark:bg-background-dark p-4 text-center border-t border-gray-200 dark:border-gray-800">
+<button class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-size: 18px;">help</span>
+                Need help? Call Supervisor
+            </button>
+</div>
+</div>
+</body></html>

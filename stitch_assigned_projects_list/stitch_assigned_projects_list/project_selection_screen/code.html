@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Selection</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden transition-colors duration-200">
+<div class="relative flex h-full min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-primary text-white shadow-md">
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<!-- User Avatar -->
+<div class="relative group cursor-pointer">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white/30" data-alt="Portrait of the logged in site engineer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgbthrzBYmgVtN5buvyLOE1cpmYPas7ittalS0ZIx-JLXnUnx3nVYsUq6jIkK6t6nf2VWV7Pyi-RwV6V9X-cXafnPf4VjDbwgu6mPO-SfsEg-JDwrsJIQTEguStI03PCo-LjCnhUkZyetceY276jx00YwAbwpodVZ7kN_KioPbKdrHJvs93EHwRyvb8LDhFpFiS9AavV2Zgm_6jmey2cSwe6UMBb3B1kD9ir2vxirIiSs5nV-tY11c_zGUPoz1j5cuUmlNLmvYXcsl");'>
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-400 border-2 border-primary rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-lg font-bold leading-tight tracking-tight">Select Project</h1>
+<span class="text-xs font-normal text-white/80">Site Engineer</span>
+</div>
+</div>
+<!-- Sync Button -->
+<button aria-label="Sync Data" class="flex size-10 items-center justify-center rounded-full hover:bg-white/10 active:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white text-2xl">cloud_sync</span>
+</button>
+</div>
+</header>
+<!-- Search Section -->
+<div class="px-4 pt-4 pb-2 bg-background-light dark:bg-background-dark sticky top-[64px] z-40">
+<label class="flex flex-col w-full">
+<div class="relative flex w-full items-center rounded-lg shadow-sm">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input block w-full rounded-lg border-0 bg-white dark:bg-surface-dark py-3 pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary shadow-sm text-base" placeholder="Search by Project Name or ID..." type="text"/>
+</div>
+</label>
+</div>
+<!-- Project List -->
+<main class="flex-1 flex flex-col gap-3 p-4">
+<!-- List Item: Active Project 1 -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-start gap-4 w-full">
+<!-- Thumbnail -->
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px]" data-alt="Construction site view of a high rise building under construction" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArHHh2VGJ04FKBgZj42nBmbj9Tqi-tBGHLsf-uNbXuuyE91e5T3SYGYvcfv8Hi0_u26ZMC7x8FkKjxOJhf_soZw6ri0UE8hfi4u6hYqffm_P1zzoFcMUaiYdBbzrK56KWl_mrXJpgf71gy9Is0kfy4f0O7MWNBt2D4XS1mk4fExr0KFVKle3hYHkOmzXln4TTLYA-qNcmDNleM6GOM-eMeXHfdtAqGi8ZRyn39AiCeU-4H7Q2uHxkkpxby_I8a_6WGKPcVgtBPW6Ez");'>
+</div>
+<div class="absolute -top-2 -left-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200 dark:border-green-800">
+                            ACTIVE
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate pr-2">Krishna Heights Tower A</h3>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 shrink-0 text-xl">chevron_right</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>ID: KHT-001</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Mumbai, MH
+                            </p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                                Started: 12-01-2024
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item: Active Project 2 -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-[0.99] transition-all cursor-pointer">
+<div class="flex items-start gap-4 w-full">
+<!-- Thumbnail -->
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px]" data-alt="Wide angle view of a residential estate construction site" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJssq1w8FccgQFpB-6oaa6s_lrSZylj-6KeJT4VXOuuiengRVT1s0lhQ0Y3ROd21P-FDk3UWUJlOioHKL2co4fVlczDCApq2XTIzLhOXuqspjzciCFeq3RktP8j6PyZmQrpcGNNM-naIweLOX5iy-riCidKtPaS2FgB-neJ79w0023nYMs7LhnVPMnrcWZ4fsKMv0ZHqlX_isayMVVqmGMre9Wp655tLSUMwvMqUBWzRuJg9mmTRo7ByN_iD5CbxktPxYPkLzLQH08");'>
+</div>
+<div class="absolute -top-2 -left-2 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-green-200 dark:border-green-800">
+                            ACTIVE
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate pr-2">Green Valley Estate</h3>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 shrink-0 text-xl">chevron_right</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>ID: GVE-2023-05</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Pune, MH
+                            </p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                                Started: 05-09-2023
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item: Pending Project -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-[0.99] transition-all cursor-pointer opacity-90">
+<div class="flex items-start gap-4 w-full">
+<!-- Thumbnail -->
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px] grayscale" data-alt="Blueprint and foundation work of a new commercial complex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1eedVnv4NcazFcwH5C1nYZ5xCWBLCmYYPQPOshh4KQnrkQit7hi1Mi3YPbq5EkFm2as2VmtEugTn2d7ckVUy719y2FJgw2aeqYGbkyWdMaePYroWohfk8MYnR334ztaJXHLihhMTmeUI1jRxxBGFQ0Z3UNHufjne1cCmubFhfbBM65CeI_sktDG9cKNtjY-PZgBlsngRcxxwCsBDKEz6mVcyFU53n4HZkSXKVv-u3b_JL-oysJFMJnNi-Rq4k7VFeuJowprMRxiA0");'>
+</div>
+<div class="absolute -top-2 -left-2 bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-800">
+                            PENDING
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate pr-2">Skyline Commercial Hub</h3>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 shrink-0 text-xl">chevron_right</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>ID: SCH-BLR-09</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Bangalore, KA
+                            </p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+                                Started: -- -- ----
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- List Item: Archived Project -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-[0.99] transition-all cursor-pointer opacity-75">
+<div class="flex items-start gap-4 w-full">
+<!-- Thumbnail -->
+<div class="shrink-0 relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[80px]" data-alt="Completed modern apartment building exterior" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJ8YFfEP4I1sa_HHKuRmL0_mZLorRDNOs3up0I28b04kXxSxzL6fqyY8Zrlh0Q2-7C4r9xULg6HfqNYM1HewNUbInd9_U_O8U_jOXtNEBWH3__aiGmtsqc6jayFLkVilhLFtqj-Wd8GvwDh_25_Y_DMaZkvJgWZSltRDRH0wrxgDX8_wJhxLANHnc0Ve-kMWI7ocLqsktTQLdaxs2V-sGU_0gpoOuRZxV6heNJLT_q8sskQjLO71Jq6cWCzPAkJPTQGCWHCkGp_pHM");'>
+</div>
+<div class="absolute -top-2 -left-2 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-slate-300 dark:border-slate-600">
+                            COMPLETED
+                        </div>
+</div>
+<!-- Content -->
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-start">
+<h3 class="text-slate-900 dark:text-white text-base font-semibold leading-tight truncate pr-2">Riverfront Residency</h3>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500 shrink-0 text-xl">chevron_right</span>
+</div>
+<div class="flex items-center gap-1 mt-1 text-primary text-sm font-medium">
+<span class="material-symbols-outlined text-[16px]">fingerprint</span>
+<span>ID: RFR-2022-12</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Ahmedabad, GJ
+                            </p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                                Completed: 10-12-2023
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Meta Text Footer -->
+<div class="mt-auto pb-6 pt-2">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-normal leading-normal px-4 text-center flex items-center justify-center gap-2">
+<span class="size-2 rounded-full bg-green-500 inline-block animate-pulse"></span>
+                Last synced: 14-10-2023 10:00 AM
+            </p>
+</div>
+</div>
+</body></html>

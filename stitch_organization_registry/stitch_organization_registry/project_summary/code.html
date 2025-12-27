@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nirmaan Build - Project Summary</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] dark:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf3] bg-white px-10 py-3 dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d141b] dark:text-white">
+<div class="size-8 text-primary">
+<svg class="h-full w-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Nirmaan Build</h2>
+</div>
+<label class="flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#4c739a] flex border-none bg-[#e7edf3] dark:bg-[#2a3b4d] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] dark:bg-[#2a3b4d] focus:border-none h-full placeholder:text-[#4c739a] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search projects..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden lg:flex items-center gap-9">
+<a class="text-[#4c739a] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Projects</a>
+<a class="text-[#4c739a] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Reports</a>
+<a class="text-[#4c739a] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Finance</a>
+<a class="text-[#4c739a] hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Team</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Profile</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-white dark:ring-[#2a3b4d]" data-alt="User profile picture showing a professional headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0lJVO6JYfmdR48GaxqaFAjzRSJ4SGO28dAif9STnKVRDsLubifPubLF4w7bLNrw28mcqHUgdUQiAmUMZO8nnD2HU3EtLlBtKXydb3ni5UhXSp8-fQo0_Iij-mH6t4V8xpL3bmBa1NhEKUOc0Goa7w-BtR_X5KrrCE5ROErbjJUNEzNfRG7TmCIz3HfzUSZ7DOOW1UmFQ0ynnIuwIvj9FkuOorEWJXxnQ6F733pf1moZGitoMDunkOPv0SqEZdVfKqovEupLPpwHQ");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 px-4 py-8 sm:px-10 lg:px-20">
+<div class="mx-auto max-w-7xl flex flex-col gap-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-4 items-end">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0d141b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Organization Overview</h1>
+<p class="text-[#4c739a] text-base font-normal leading-normal">Summary of all ongoing construction projects across India</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 rounded-lg border border-[#cfdbe7] bg-white px-4 py-2 text-sm font-medium text-[#0d141b] hover:bg-slate-50 dark:bg-[#1a2632] dark:border-[#2a3b4d] dark:text-white dark:hover:bg-[#2a3b4d]/80">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                            Export Report
+                        </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-xl bg-white p-6 shadow-sm border border-[#e7edf3] dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="flex items-center justify-between">
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Total Active Projects</p>
+<span class="material-symbols-outlined text-primary text-[24px]">apartment</span>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">12</p>
+<span class="mb-1 text-[#078838] text-xs font-bold bg-[#078838]/10 px-2 py-0.5 rounded">+2 this month</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl bg-white p-6 shadow-sm border border-[#e7edf3] dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="flex items-center justify-between">
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Total Budget Utilized</p>
+<span class="material-symbols-outlined text-primary text-[24px]">currency_rupee</span>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">₹ 45.5 Cr</p>
+<span class="mb-1 text-[#078838] text-xs font-bold bg-[#078838]/10 px-2 py-0.5 rounded">+₹ 1.2 Cr</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl bg-white p-6 shadow-sm border border-[#e7edf3] dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="flex items-center justify-between">
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Timeline Variance</p>
+<span class="material-symbols-outlined text-orange-500 text-[24px]">history</span>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">3</p>
+<p class="mb-1 text-[#0d141b] dark:text-gray-400 text-sm font-medium">Projects Delayed</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl bg-white p-6 shadow-sm border border-[#e7edf3] dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="flex items-center justify-between">
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Safety Incidents</p>
+<span class="material-symbols-outlined text-green-600 text-[24px]">health_and_safety</span>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">0</p>
+<p class="mb-1 text-[#0d141b] dark:text-gray-400 text-sm font-medium">Critical Issues</p>
+</div>
+</div>
+</div>
+<!-- Filters and Search -->
+<div class="flex flex-col gap-4 rounded-xl bg-white p-4 shadow-sm border border-[#e7edf3] dark:bg-[#1a2632] dark:border-[#2a3b4d] lg:flex-row lg:items-center">
+<div class="flex-1">
+<div class="flex w-full items-stretch rounded-lg bg-[#f6f7f8] dark:bg-[#2a3b4d] h-10">
+<div class="text-[#4c739a] flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent text-[#0d141b] dark:text-white placeholder:text-[#4c739a] text-sm border-none focus:ring-0" placeholder="Search by project name, city, or manager"/>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 items-center">
+<span class="text-sm font-medium text-[#4c739a] mr-2">Filter by:</span>
+<button class="flex h-8 items-center gap-2 rounded-lg bg-[#e7edf3] px-3 hover:bg-[#dbe3eb] dark:bg-[#2a3b4d] dark:hover:bg-[#35475a]">
+<span class="text-[#0d141b] dark:text-white text-xs font-bold">Status: All</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<button class="flex h-8 items-center gap-2 rounded-lg bg-[#e7edf3] px-3 hover:bg-[#dbe3eb] dark:bg-[#2a3b4d] dark:hover:bg-[#35475a]">
+<span class="text-[#0d141b] dark:text-white text-xs font-bold">Location: All</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<button class="flex h-8 items-center gap-2 rounded-lg bg-[#e7edf3] px-3 hover:bg-[#dbe3eb] dark:bg-[#2a3b4d] dark:hover:bg-[#35475a]">
+<span class="text-[#0d141b] dark:text-white text-xs font-bold">Budget</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<div class="w-px h-6 bg-[#cfdbe7] mx-2 dark:bg-[#4c5d6e]"></div>
+<div class="flex bg-[#e7edf3] rounded-lg p-0.5 dark:bg-[#2a3b4d]">
+<button class="p-1 rounded bg-white shadow-sm dark:bg-[#1a2632]">
+<span class="material-symbols-outlined text-[20px] text-[#0d141b] dark:text-white">grid_view</span>
+</button>
+<button class="p-1 rounded text-[#4c739a] hover:text-[#0d141b] dark:hover:text-white">
+<span class="material-symbols-outlined text-[20px]">list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Projects Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Project Card 1 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-xs font-bold text-[#0d141b] shadow-sm">
+                                    Construction Phase
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Construction site of a modern residential high-rise building with cranes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNNIQZaShBHuDkr6qcEiYF-VHGDs12nRg2SFYmCB7gvLvI2hVsQRDhg7Bt00NSpbQ-qpf3Hhz5bXXL5H3lsKb_OOVFm5LvZBQO8v8WktE6VQfxcyL_l3MyyW-ksULKVo85chHvJ3f8g5Uf1D5uSGEPOoa7jLh5JNKEcywu2yvQ6X9_hn0cv_rjozw3CiNqSH-QoT-1xpPFuaG-wMYS3abvPX_PWyn9b-k0iRvNbzMrbWApsaiJFJDkroPPl5esgIw52-twxU1l6-8');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Skyline Residency - Tower A</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Pune, Maharashtra</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">62%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 62%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Budget Utilized</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 2.5 Cr <span class="text-[#4c739a] font-normal">/ 4.0 Cr</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">End Date</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">30-12-2024</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#1380ec] py-2 text-sm font-bold text-[#1380ec] hover:bg-[#1380ec]/5 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-yellow-100 px-2.5 py-1 text-xs font-bold text-yellow-800 shadow-sm border border-yellow-200">
+                                    Delayed
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Commercial office complex foundation work with excavators" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAt8ycv3H8xwdb5u0Vdsk6nFvMD_Qj3NNI5uBNuzjOTmtLRChYHLuh0FmfjHV0SUlLxfTuCQmcAsAO-kd3GPCNc6q1DWq1PzQYF27lfEwfDXBTgMJ15Z_pm3LQKOF7FFIEJ6u6aJ0iDXeShhIuIPLxBqME-HbqgNCK363kqvbqkj8smDteKwaN3kJ0zw9DhbVrYrh5E9uImSzfrFKb2rDfhWq3NEfZiI-haRMR5Viqim2rx0Dg9c21qf2jn1LZhPkNVDnHS-qfoCbk');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Tech Park Phase 2</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Bangalore, Karnataka</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">24%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-yellow-500" style="width: 24%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Budget Utilized</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 8.2 Cr <span class="text-[#4c739a] font-normal">/ 45.0 Cr</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">End Date</p>
+<p class="text-sm font-bold text-red-600">14-08-2025</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#1380ec] py-2 text-sm font-bold text-[#1380ec] hover:bg-[#1380ec]/5 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-xs font-bold text-[#0d141b] shadow-sm">
+                                    Finishing
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern interior of a mall under construction finishing stage" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB45ZaNBvNJEt2Ev4WjB8JduWVvfoODMUinAsvRrZNWy2aStb1nqNtVO91WKakqhmperFLlNEz0gg7QRQaeoWJ3imcjDmwZEtEkal2f-cHnjvh88QKdzBAghLeNWpHRVSaPeu4byrIrrFcRQUpkSsGYumrQOhFb5h34IYRP4O4V5u5ZUUZsCgOZmPMD3C1mvgviGYrCeECQ8HunvsVynB3LfxYEBWtOB4p9Du0WLTWse9ov-tFv-K5QekrskNKZV6F8BYPDMsrQvzs');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Grand Mall - West Wing</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Mumbai, Maharashtra</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">92%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-green-500" style="width: 92%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Budget Utilized</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 18.1 Cr <span class="text-[#4c739a] font-normal">/ 18.5 Cr</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">End Date</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">25-05-2024</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#1380ec] py-2 text-sm font-bold text-[#1380ec] hover:bg-[#1380ec]/5 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-xs font-bold text-[#0d141b] shadow-sm">
+                                    Planning
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Architectural blueprints and model on a desk" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIESlLGyRFCMu5QJ0XQmcEJLko5Cw6lgkMMKA4l9j4kjHYf_hHxHI_ZS0bnULy_AsrdVQNzTd7d8eTUvnSsUShCkcN9MA6gCbPmwMmgkc8VIyMTvYrZ2QtrmQjqpP2PkS1nnJCmbWCgcFCGTyPz0j5hRv65ChP4kKFRSwXaQSM_7jxyPDCE22xFFM25mm1bhDCnUAXdmEJWBza0YY3lHcwzNe1nG0-9n9gIH4oh9uBfnTIV4BkWvXMaewvu-5tWIM4t_YiRTkeMGQ');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Riverside Villa Complex</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Goa, India</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">5%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 5%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Budget Utilized</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 0.5 Cr <span class="text-[#4c739a] font-normal">/ 15.0 Cr</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">Start Date</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">01-06-2024</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#1380ec] py-2 text-sm font-bold text-[#1380ec] hover:bg-[#1380ec]/5 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-xs font-bold text-[#0d141b] shadow-sm">
+                                    Structure
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Steel structure framework of a warehouse building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaZFgjSohm__xtXnmF2mDiJjq7DPJZ5NhsFWuNyhehXCphJC3ZLEfw8YKe4lXufF8KXTqBLmKeUtLJJ-8RBEDPexiyRnaZItDHO9JwmqZ9sn5Xe17dpF98VMcLmFFQr__qiMMqB9tp8YNs7vmFvEECt63eivpN113EWgRoha3Qr0DI2mVSv9J5ZDINxKY41HvGqbFcPczu-04mPvGoELKZC6Y_RaKg8rjyy9icKJnqBq2JVyOgP-F2H4WxfCq3oNOhsP3YQoJPPjs');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Logistics Hub North</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Gurugram, Haryana</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">45%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 45%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Budget Utilized</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 6.8 Cr <span class="text-[#4c739a] font-normal">/ 12.0 Cr</span></p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">End Date</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">10-09-2024</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#1380ec] py-2 text-sm font-bold text-[#1380ec] hover:bg-[#1380ec]/5 transition-colors">
+                                    View Details
+                                </button>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="group flex flex-col overflow-hidden rounded-xl bg-white border border-[#e7edf3] shadow-sm hover:shadow-md transition-shadow dark:bg-[#1a2632] dark:border-[#2a3b4d]">
+<div class="relative h-48 w-full overflow-hidden bg-gray-200">
+<div class="absolute top-3 left-3 z-10">
+<span class="inline-flex items-center rounded-md bg-white/90 backdrop-blur-sm px-2.5 py-1 text-xs font-bold text-[#0d141b] shadow-sm">
+                                    Completed
+                                </span>
+</div>
+<div class="absolute top-3 right-3 z-10">
+<span class="inline-flex items-center justify-center size-8 rounded-full bg-white/90 backdrop-blur-sm text-[#0d141b] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</span>
+</div>
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Finished exterior of a modern hospital building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqsB95WLMC_JynhsbAfCOsgQCux-vvH1NDgu9l8vAFf7gdpTHvKiTiAe4CsYcR5IoiEOsip556_6Qi0kre_gsqEYcbkL-EuXSvzz3u_tjKFEJlMZ_7rN4ve_SJF1tS1tBxFWjM1WDUbvSkri2Zg2gmeY0_GTfhDdQEaAqPyX6N3myhI7W6nVx0P-cdbSL43ZhWtJJtEaPTLa0zCicW9G48X7jTXVxZtlWJksZY-z_E08_w8jhmyQTelBVdEMoOTsJ91elOwmmqJVI');"></div>
+</div>
+<div class="flex flex-1 flex-col p-5">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">City General Hospital</h3>
+<div class="flex items-center gap-1 text-[#4c739a] mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span class="text-xs font-medium">Chennai, Tamil Nadu</span>
+</div>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-3">
+<div>
+<div class="flex justify-between text-sm mb-1">
+<span class="text-[#4c739a] font-medium">Progress</span>
+<span class="text-[#0d141b] font-bold dark:text-white">100%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-[#e7edf3] dark:bg-[#2a3b4d] overflow-hidden">
+<div class="h-full rounded-full bg-green-600" style="width: 100%"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-2 border-t border-[#e7edf3] pt-4 dark:border-[#2a3b4d]">
+<div>
+<p class="text-xs text-[#4c739a] mb-0.5">Final Cost</p>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">₹ 32.0 Cr</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-[#4c739a] mb-0.5">Completed</p>
+<p class="text-sm font-bold text-green-600">15-03-2024</p>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-2">
+<button class="w-full rounded-lg border border-[#e7edf3] py-2 text-sm font-bold text-[#4c739a] hover:bg-[#e7edf3] transition-colors dark:border-[#2a3b4d] dark:text-gray-400 dark:hover:bg-[#2a3b4d]">
+                                    Archive Project
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center pt-8">
+<div class="flex gap-2">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e7edf3] bg-white text-[#0d141b] hover:bg-slate-50 dark:bg-[#1a2632] dark:border-[#2a3b4d] dark:text-white">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-white font-bold">
+                            1
+                        </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e7edf3] bg-white text-[#0d141b] hover:bg-slate-50 dark:bg-[#1a2632] dark:border-[#2a3b4d] dark:text-white">
+                            2
+                        </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e7edf3] bg-white text-[#0d141b] hover:bg-slate-50 dark:bg-[#1a2632] dark:border-[#2a3b4d] dark:text-white">
+                            3
+                        </button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg border border-[#e7edf3] bg-white text-[#0d141b] hover:bg-slate-50 dark:bg-[#1a2632] dark:border-[#2a3b4d] dark:text-white">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organization Overview - Sri Krishna Const.</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for table if needed */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden md:flex flex-col h-full">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shadow-sm" data-alt="Company Logo showing a stylized building structure" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5b1eni6Of_EsytLdXcl3i-aQ1JT_oA10a3rtoEkTUHIFB_Zjp8g2GNiCp1eeDN4LCkQR8OHdneB2bmzmJjpjKKScTKSeGiQjyLdiW8VQCRa5WlSj386AZl49qAGAbW9IGULf7W0ccQlPfz0MZU1PtA3ZOJUyxdGU9GkVD9Yvc6DgNBpoJzPfJuRbOlm9QpPuOdFoQjHEpe-6NipW8f4qN0uqJJhoXofrZdvKuOqnzbdKQ_Oa0g6riCQ5RkOSPpChTpeQL6oBYzIQ");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Sri Krishna Const.</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Owner Dashboard</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary group" href="#">
+<span class="material-symbols-outlined text-[20px] font-medium group-hover:text-primary">dashboard</span>
+<span class="text-sm font-semibold">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary">business_center</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary">currency_rupee</span>
+<span class="text-sm font-medium">Finance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary">groups</span>
+<span class="text-sm font-medium">Workforce</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:text-primary">bar_chart</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark">
+<!-- Top Mobile Header (Visible only on small screens) -->
+<div class="md:hidden flex items-center justify-between p-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Company Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhK8yESUs-QIsdE0-cYZ5z4ni22DUv2ZS75goOYg_Yx-nlougjGwBIkRTanAEeqjmBkKBH9rT6hWNprJFRHInxNxTV7yA8NGM3SukYVugBPlRfwuR6JmkUUtSqxZydu1DW7udtrQJQdG-CG5sBK9GY1gVkl4CCTUohsePxSfCNBj0A41PDdmUIfzUEWvd6w4R2HX4N63tjGrxhCp-dg57te3znPOvHD0VQMsiH4LhxxCPvWoQQSb4RLMGVFpxkii9tLSCwnH7Bypg");'></div>
+<span class="font-bold text-slate-900 dark:text-white">Sri Krishna Const.</span>
+</div>
+<span class="material-symbols-outlined text-slate-600">menu</span>
+</div>
+<div class="layout-container w-full max-w-[1200px] mx-auto p-4 md:p-8 flex flex-col gap-6">
+<!-- Page Heading -->
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-white text-3xl font-black leading-tight tracking-tight">Organization Overview</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Snapshot of Sri Krishna Constructions Pvt. Ltd.</p>
+</div>
+<!-- Profile Header Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg h-24 w-24 border border-slate-100 dark:border-slate-700 shadow-sm shrink-0" data-alt="Construction company branding logo with abstract blue building" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB98GollxC7QUhhu5T8OzbFv_vPlQrklc9AwwGFzeDucGN6zebHSha1cgnkwv2vBfKai1perPWE9NMArwJ6nsD7mc9fENifSlIyPGZRJPblLh1qekOwQ6DaIatdACYtYgz8b7Ggjl7oV4RqRQq7oa_ea77Ye9Rm1XOjMDgJ7JLEfCmHhCbtThm5jiqh3BqWq0KE6P3ck_YPekSbVgfy4M4J8x7KUCiSqtmbx-YeSGPXG1yij5p7a81kPKrJCXXkmxXRAvtFms4SUNw");'></div>
+<div class="flex flex-col gap-1 flex-1">
+<div class="flex flex-wrap items-center gap-3">
+<h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold">Sri Krishna Constructions Pvt. Ltd.</h2>
+<span class="inline-flex items-center gap-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-2 py-1 rounded-full font-medium border border-green-200 dark:border-green-800">
+<span class="material-symbols-outlined text-[14px]">verified</span> Verified
+                            </span>
+</div>
+<div class="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400 mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span> Est: 12-05-2015
+                            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Bengaluru, KA
+                            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">engineering</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Active Projects</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">12</p>
+<p class="text-green-600 text-xs font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> 2 new this month
+                    </p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">groups</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Workforce</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">450+</p>
+<p class="text-slate-400 text-xs font-medium mt-1">Across 4 sites</p>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">payments</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Revenue YTD</p>
+<p class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">₹ 12.5 Cr</p>
+<p class="text-green-600 text-xs font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 15% vs last year
+                    </p>
+</div>
+</div>
+<!-- Content Grid: Details & Tables -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Active Projects Table (Takes 2/3 width on large screens) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Active Projects Overview</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-sm text-slate-600 dark:text-slate-400">
+<thead class="bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white font-semibold">
+<tr>
+<th class="px-5 py-3 rounded-tl-lg">Project Name</th>
+<th class="px-5 py-3">Location</th>
+<th class="px-5 py-3">Status</th>
+<th class="px-5 py-3 text-right rounded-tr-lg">Budget Utilized</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 font-medium text-slate-900 dark:text-white">Sunrise Apartments</td>
+<td class="px-5 py-4">Pune, MH</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span> On Schedule
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right font-medium">₹ 4.5 Cr</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 font-medium text-slate-900 dark:text-white">Green Valley Villa</td>
+<td class="px-5 py-4">Bengaluru, KA</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-400">
+<span class="size-1.5 rounded-full bg-orange-600"></span> Delayed
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right font-medium">₹ 1.2 Cr</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 font-medium text-slate-900 dark:text-white">Tech Park Phase 2</td>
+<td class="px-5 py-4">Hyderabad, TS</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span> On Schedule
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right font-medium">₹ 8.5 Cr</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 font-medium text-slate-900 dark:text-white">Riverside Bridge</td>
+<td class="px-5 py-4">Kochi, KL</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-400">
+<span class="size-1.5 rounded-full bg-blue-600"></span> Planning
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right font-medium">₹ 0.1 Cr</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-5 py-4 font-medium text-slate-900 dark:text-white">Metro Station #14</td>
+<td class="px-5 py-4">Chennai, TN</td>
+<td class="px-5 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span> On Schedule
+                                            </span>
+</td>
+<td class="px-5 py-4 text-right font-medium">₹ 12.0 Cr</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Feed (Takes 1/3 width on large screens) -->
+<div class="flex flex-col gap-6">
+<!-- Organization Details Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-5">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold mb-4">Organization Details</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1 pb-3 border-b border-slate-100 dark:border-slate-800">
+<span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-semibold">Registered Address</span>
+<p class="text-sm font-medium text-slate-800 dark:text-slate-200">#42, 3rd Cross, Indiranagar, Bengaluru, Karnataka - 560038</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-semibold">GSTIN</span>
+<p class="text-sm font-medium text-slate-800 dark:text-slate-200 font-mono bg-slate-50 dark:bg-slate-800 rounded px-2 py-1 w-fit">29ABCDE1234F1Z5</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-semibold">PAN</span>
+<p class="text-sm font-medium text-slate-800 dark:text-slate-200 font-mono bg-slate-50 dark:bg-slate-800 rounded px-2 py-1 w-fit">ABCDE1234F</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 pt-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wide font-semibold">Contact</span>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">mail</span>
+<p class="text-sm text-slate-800 dark:text-slate-200">admin@srikrishnaconst.com</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-slate-400">call</span>
+<p class="text-sm text-slate-800 dark:text-slate-200">+91 98765 43210</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-5 flex-1">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold">Recent Updates</h3>
+<span class="text-xs font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Last 7 Days</span>
+</div>
+<div class="relative pl-2">
+<!-- Vertical Line -->
+<div class="absolute left-2 top-2 bottom-4 w-0.5 bg-slate-200 dark:bg-slate-800"></div>
+<div class="flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="relative flex gap-3 pl-4">
+<div class="absolute left-0 top-1.5 size-4 rounded-full border-2 border-white dark:border-slate-900 bg-primary z-10 box-content"></div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Payment Received</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">₹ 25 Lakhs from Sunrise Apts</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Today, 10:30 AM</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative flex gap-3 pl-4">
+<div class="absolute left-0 top-1.5 size-4 rounded-full border-2 border-white dark:border-slate-900 bg-green-500 z-10 box-content"></div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Milestone Reached</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Foundation complete at Tech Park</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Yesterday, 04:15 PM</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative flex gap-3 pl-4">
+<div class="absolute left-0 top-1.5 size-4 rounded-full border-2 border-white dark:border-slate-900 bg-orange-400 z-10 box-content"></div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">Material Alert</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Cement stock low at Green Valley</p>
+<p class="text-[10px] text-slate-400 mt-0.5">25-10-2023</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative flex gap-3 pl-4">
+<div class="absolute left-0 top-1.5 size-4 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300 dark:bg-slate-600 z-10 box-content"></div>
+<div class="flex flex-col gap-0.5">
+<p class="text-sm font-semibold text-slate-900 dark:text-white">New Hire</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Site Engineer joined Kochi team</p>
+<p class="text-[10px] text-slate-400 mt-0.5">24-10-2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="mt-auto py-6 text-center text-slate-400 text-sm">
+<p>© 2024 Sri Krishna Constructions Pvt. Ltd. All rights reserved.</p>
+</footer>
+</div>
+</main>
+</div>
+</body></html>

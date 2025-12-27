@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DPR Review - Construction Manager</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "text-main": "#0d141b",
+                        "text-secondary": "#4c739a",
+                        "border-color": "#e7edf3"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased pb-24">
+<!-- Top Navigation -->
+<header class="bg-white border-b border-border-color sticky top-0 z-40">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-main">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">construction</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">CM System</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold" href="#">Projects</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Teams</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Finance</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-background-light rounded-lg px-3 py-2 w-64 border border-transparent focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+<span class="material-symbols-outlined text-text-secondary text-[20px]">search</span>
+<input class="bg-transparent border-none text-sm w-full focus:ring-0 placeholder:text-text-secondary" placeholder="Search DPRs, Sites..."/>
+</div>
+<button class="relative p-2 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+<div class="w-8 h-8 rounded-full bg-cover bg-center border border-border-color cursor-pointer" data-alt="User profile picture of a manager" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGlo9ZHJxiBtjle005GTL4w8a_Ec235WL7UJLuenq5hrH-fcnsiqCttWDNjTlcFg9Nej95Ub3N3lPw5v_j2s_R6f2Jjx-Q0DwcWQG6sCNn_j_xL34PB0-xW2iuK1qJIDk0Y1jTX-Gp-P3T1GWVU6lE25d7ogmHRosgj7DFtEsHIB5znKZ4BNJU7Fcmp9VmGbdjWPbvEYyXOBewIujnYYBE57Nt1syqGTNDDGzHc1mhU-GO5ASKIBjU1CiwK5TQ9Nc34TGZxDgNgvo');"></div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<div class="max-w-[1200px] mx-auto px-6 py-6 w-full flex flex-col gap-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm text-text-secondary">
+<a class="hover:text-primary" href="#">Projects</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Skyline Towers</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-semibold text-text-main">DPR #4023</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-border-color pb-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-3xl font-extrabold tracking-tight text-text-main">DPR Review: Skyline Towers - Block B</h1>
+<span class="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold border border-yellow-200">Pending Review</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-text-secondary text-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                        Submitted by: <span class="font-semibold text-text-main">Rajesh Kumar</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        Date: <span class="font-semibold text-text-main">24-10-2023</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                        Time: <span class="font-semibold text-text-main">06:45 PM</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-color bg-white hover:bg-gray-50 text-text-main font-semibold text-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">print</span>
+                    Print
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-color bg-white hover:bg-gray-50 text-text-main font-semibold text-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                    Download PDF
+                </button>
+</div>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Photos & Details (2/3) -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Mandatory Photos Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold flex items-center gap-2 text-text-main">
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+                            Site Photo Evidence <span class="text-red-500 text-sm font-normal ml-1">(Mandatory)</span>
+</h3>
+<button class="text-primary text-sm font-bold hover:underline">View All (8)</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Photo 1 (Featured) -->
+<div class="col-span-2 md:col-span-1 group relative rounded-xl overflow-hidden aspect-video shadow-sm border border-border-color bg-gray-100 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Construction workers pouring concrete on a slab" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5Dn6sOHz6PXxzW6SAAjJ2brK_pjqwO3X4H-4_h62GHrU-j_IgOEMrmLP9R4MrdvMUWcz2GLjkozuSz5LJy22QWnWsUa4klU3JzM0wdDoqN1a7mtQNotYl4TQwdVhROw-YEoLdgNf1uB4nkEDjKF4vqIAm58bNB09D9ZV78AJmeXH0iy02wiRCpbtcFTBChKbBJq6bXHH7_Hd-Mnh-hHjDzlmnQK2nXkSFGWEdLGyQMzYpH1NVDCguFLHimmrnz8niYxi9H1h8Uwo');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<p class="text-xs font-medium opacity-80">10:30 AM • 4th Floor Slab</p>
+<p class="text-sm font-bold">Concrete Pouring</p>
+</div>
+<div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded px-2 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-white text-[14px]">location_on</span>
+<span class="text-[10px] text-white font-medium" data-location="Mumbai">19.07, 72.87</span>
+</div>
+</div>
+<!-- Photo 2 -->
+<div class="group relative rounded-xl overflow-hidden aspect-video md:aspect-auto shadow-sm border border-border-color bg-gray-100 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Stacked cement bags in storage area" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtZugA41kbvVj8z63tUB-uXm1wU1YXOVy40oQEP8qfs4zGw0l8JIuGXJrzE56D7U07-K5S1AJMGxf2NbyFYLM_f2Ul2D6mw2xbKIp8-U1oZ8cnQQG7zoru00vcp2-NFN6HJafKYAz4tH5KZVRqUkRUtLcnP7L5A7PJ-rGxKc7zPJoUz1gnD_7mEuNaCK0DinJnqw3p7M9y28j-QWL4X86Kd8ekqnOmpSveGIA8JNyxLZqmWlL9bF_RvzRSKZ0WsFA195fJ1CyseeU');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<p class="text-xs font-medium opacity-80">09:15 AM • Store Room</p>
+<p class="text-sm font-bold">Material Unloading</p>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="group relative rounded-xl overflow-hidden aspect-video md:aspect-auto shadow-sm border border-border-color bg-gray-100 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Construction worker tying steel rebar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDw_4TN4PSoMNkYrVDj-74Yq0kMqsFwPKcxGLxh9hI6TsNvT2Rk6YRXeHOnM4ztnlm9o0gF20bvco8jlwEJjqDKHBNnThGvLrdjU7vqUdBog-KKZFP-t-0FQakB3QWWesBOqyZ3BHFK-DP9jyBGL_15qyESyrNDV2fxFoHbCCV3Hsh_57F7YFXgg4LmV0aoT6rw03viKRx8Ida5ygv-reoxMw6m6K62bw1CVmT4S9akBz6t30CK-hiD_5rfJwCfJEMo6zBk2EFYeS4');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-3 left-3 text-white">
+<p class="text-xs font-medium opacity-80">11:45 AM • Pillar 4B</p>
+<p class="text-sm font-bold">Steel Binding</p>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="col-span-2 md:col-span-2 group relative rounded-xl overflow-hidden h-24 shadow-sm border border-border-color bg-gray-100 cursor-pointer flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors">
+<span class="text-primary font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined">grid_view</span>
+                               View all 8 photos in Gallery
+                           </span>
+</div>
+</div>
+</section>
+<!-- Detailed Work Log -->
+<section class="flex flex-col gap-4 bg-white p-6 rounded-xl border border-border-color shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-lg font-bold text-text-main">Work Progress Log</h3>
+<span class="text-xs font-medium px-2 py-1 bg-green-100 text-green-700 rounded">On Schedule</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-color text-xs uppercase text-text-secondary tracking-wider">
+<th class="py-3 font-semibold">Activity</th>
+<th class="py-3 font-semibold">Location</th>
+<th class="py-3 font-semibold text-right">Quantity</th>
+<th class="py-3 font-semibold text-right">Progress</th>
+</tr>
+</thead>
+<tbody class="text-sm text-text-main divide-y divide-border-color">
+<tr>
+<td class="py-3 font-medium">Brickwork (4 inch)</td>
+<td class="py-3 text-text-secondary">Block B, 3rd Floor</td>
+<td class="py-3 text-right">150 sq ft</td>
+<td class="py-3 text-right text-green-600 font-bold">100%</td>
+</tr>
+<tr>
+<td class="py-3 font-medium">Ceiling Plaster</td>
+<td class="py-3 text-text-secondary">Block B, 2nd Floor</td>
+<td class="py-3 text-right">200 sq ft</td>
+<td class="py-3 text-right text-yellow-600 font-bold">60%</td>
+</tr>
+<tr>
+<td class="py-3 font-medium">Electrical Conduit</td>
+<td class="py-3 text-text-secondary">Block A, Lobby</td>
+<td class="py-3 text-right">50 rft</td>
+<td class="py-3 text-right text-green-600 font-bold">100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Material Log -->
+<section class="flex flex-col gap-4 bg-white p-6 rounded-xl border border-border-color shadow-sm">
+<h3 class="text-lg font-bold text-text-main mb-2">Material Consumption</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-color text-xs uppercase text-text-secondary tracking-wider">
+<th class="py-3 font-semibold">Item</th>
+<th class="py-3 font-semibold">Supplier</th>
+<th class="py-3 font-semibold text-right">Used Qty</th>
+<th class="py-3 font-semibold text-right">Cost (Est)</th>
+</tr>
+</thead>
+<tbody class="text-sm text-text-main divide-y divide-border-color">
+<tr>
+<td class="py-3 font-medium">Cement (Ultratech)</td>
+<td class="py-3 text-text-secondary">Ramesh Traders</td>
+<td class="py-3 text-right">50 Bags</td>
+<td class="py-3 text-right font-mono">₹ 17,500</td>
+</tr>
+<tr>
+<td class="py-3 font-medium">Steel (12mm)</td>
+<td class="py-3 text-text-secondary">Tata Steel</td>
+<td class="py-3 text-right">1.5 Tons</td>
+<td class="py-3 text-right font-mono">₹ 98,000</td>
+</tr>
+<tr>
+<td class="py-3 font-medium">Aggregate (20mm)</td>
+<td class="py-3 text-text-secondary">Local</td>
+<td class="py-3 text-right">2 Brass</td>
+<td class="py-3 text-right font-mono">₹ 12,000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Stats & Review (1/3) -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Quick Overview Stats -->
+<div class="bg-white rounded-xl border border-border-color p-5 shadow-sm">
+<h4 class="text-sm font-bold text-text-secondary uppercase mb-4 tracking-wider">Daily Summary</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between pb-4 border-b border-border-color">
+<div class="flex items-center gap-3">
+<div class="bg-blue-50 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary font-medium">Total Labor</p>
+<p class="text-lg font-bold text-text-main">32</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs text-text-secondary">Masons: <span class="text-text-main font-bold">12</span></p>
+<p class="text-xs text-text-secondary">Helpers: <span class="text-text-main font-bold">20</span></p>
+</div>
+</div>
+<div class="flex items-center justify-between pb-4 border-b border-border-color">
+<div class="flex items-center gap-3">
+<div class="bg-green-50 p-2 rounded-lg text-green-600">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary font-medium">Est. Daily Cost</p>
+<p class="text-lg font-bold text-text-main">₹ 1,27,500</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-purple-50 p-2 rounded-lg text-purple-600">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<p class="text-xs text-text-secondary font-medium">Inventory Alerts</p>
+<p class="text-sm font-bold text-text-main">Sand Low Stock</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+</div>
+</div>
+</div>
+<!-- Constraints Widget -->
+<div class="bg-orange-50 rounded-xl border border-orange-200 p-5">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-orange-600 mt-0.5">warning</span>
+<div>
+<h4 class="text-sm font-bold text-orange-800 mb-1">Constraints Reported</h4>
+<p class="text-xs text-orange-800/80 leading-relaxed">
+                                Work delayed by 45 mins post-lunch due to sudden heavy rainfall. Electrical work in open areas halted.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Manager Note (Read Only if previously added, or history) -->
+<div class="bg-white rounded-xl border border-border-color p-5 shadow-sm">
+<h4 class="text-sm font-bold text-text-secondary uppercase mb-3 tracking-wider">Previous Remarks</h4>
+<div class="text-sm text-text-main bg-gray-50 p-3 rounded-lg border border-border-color">
+<p class="text-xs text-text-secondary mb-1">Rajesh Kumar (Yesterday):</p>
+<p class="italic">"Photos for Slab casting delayed due to network issues. Uploaded now."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Action Footer -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-border-color shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50">
+<div class="max-w-[1200px] mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="w-full md:w-1/2">
+<label class="sr-only" for="remarks">Manager Remarks</label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-text-secondary material-symbols-outlined text-[20px]">edit_note</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-background-light border border-border-color rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="remarks" placeholder="Add remarks (Required for rejection)..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto justify-end">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg border border-red-200 bg-red-50 text-red-600 hover:bg-red-100 font-bold text-sm transition-colors">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+                    Reject
+                </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-2.5 rounded-lg bg-primary hover:bg-blue-600 text-white shadow-md shadow-blue-500/20 font-bold text-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                    Approve DPR
+                </button>
+</div>
+</div>
+</div>
+</body></html>

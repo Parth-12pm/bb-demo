@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DPR Creation Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 flex items-center bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 p-4 justify-between shadow-sm">
+<div class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-slate-100 dark:active:bg-slate-800 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">New Daily Report</h2>
+<div class="flex items-center justify-end cursor-pointer">
+<p class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Save Draft</p>
+</div>
+</div>
+<!-- Offline Banner -->
+<div class="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800/50 px-4 py-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-amber-700 dark:text-amber-500 text-sm">wifi_off</span>
+<p class="text-amber-800 dark:text-amber-500 text-xs font-medium">Offline Mode - Report will sync when online</p>
+</div>
+<!-- Meta Info -->
+<div class="bg-white dark:bg-background-dark px-4 py-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Date</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium">25-10-2023</p>
+</div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700 mx-4"></div>
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-semibold uppercase tracking-wider">Site Location</p>
+<p class="text-slate-900 dark:text-white text-sm font-medium truncate">Block A - Foundation Area</p>
+</div>
+<span class="material-symbols-outlined text-primary text-xl ml-2">edit_location_alt</span>
+</div>
+</div>
+<!-- Section: Visual Proof -->
+<div class="flex flex-col mt-4 bg-white dark:bg-background-dark pb-4">
+<div class="px-4 pt-4 pb-2 flex justify-between items-end">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Visual Proof <span class="text-red-500">*</span></h3>
+<span class="text-xs text-slate-500 dark:text-slate-400">Min 2 photos</span>
+</div>
+<div class="grid grid-cols-3 gap-3 px-4 mt-2">
+<!-- Upload Button -->
+<div class="aspect-square rounded-xl border-2 border-dashed border-primary/50 bg-primary/5 dark:bg-primary/10 flex flex-col items-center justify-center gap-2 cursor-pointer active:bg-primary/10 transition-colors hover:bg-primary/10">
+<div class="bg-primary/10 rounded-full p-2">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+</div>
+<span class="text-primary text-xs font-bold text-center">Add Photo</span>
+</div>
+<!-- Existing Photo 1 -->
+<div class="relative aspect-square rounded-xl overflow-hidden group bg-slate-100 dark:bg-slate-800">
+<img alt="Construction site foundation" class="w-full h-full object-cover" data-alt="Construction site foundation work with rebar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJnMJf8RrOXK4335aNQlygatUMyqemYfXVK1R_0bEsnExeWBwzZRy0hFEDwGIOAiGYnWhK4K-XgvsDRPqsKb9RiNsqblEvYxlxLSbytmYCIvwLNbEb6yzQxwzZadTxuQs4nZDtnRdU6LhgJXfKEqwHax4ZpTLnBQ4YX-jZOIzQmlJMvSA9p7oCEgtNTItozx8B8CagJuEx3-4e3C3_f8unvnviFVoBr6fFZ0JXKcZNVb1WwGa6iM1_WrC1YGI8h0Y-cpuOflprqPTr"/>
+<div class="absolute top-1 right-1 bg-black/50 text-white rounded-full p-1 cursor-pointer hover:bg-red-500 transition-colors">
+<span class="material-symbols-outlined text-xs block">close</span>
+</div>
+</div>
+<!-- Existing Photo 2 -->
+<div class="relative aspect-square rounded-xl overflow-hidden group bg-slate-100 dark:bg-slate-800">
+<img alt="Concrete pouring" class="w-full h-full object-cover" data-alt="Workers pouring concrete at site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfBcppugQRwywAt69TBw0gdP7EKeHEu30OOobBfgDzkN69ZkcUTlc0nCBar1nzOMcNBDQjijLUn3OqSkU-vl9IIIgkn63y4fMn9uLM0QVpuLTNqMz1w6SApIc-QRcDHv_mLFcPvh1gCjg5fjc25IUmZgIhfKUAHgRK5TgIatBfDjMUONGtYdqfPdprWZl11kdLZvD4bUtF1l8_wPCDZ81tm8rc5Fkqo-Wf-sBOwtzBRZUKik8h2fhJXjkB7EkT46FHx0xIBwm52Wh"/>
+<div class="absolute top-1 right-1 bg-black/50 text-white rounded-full p-1 cursor-pointer hover:bg-red-500 transition-colors">
+<span class="material-symbols-outlined text-xs block">close</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Work Progress -->
+<div class="flex flex-col mt-4 bg-white dark:bg-background-dark pb-6">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight px-4 pt-4 pb-4">Work Done</h3>
+<div class="px-4 flex flex-col gap-4">
+<div class="relative">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1" for="activity">Activity Type</label>
+<div class="relative">
+<select class="block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white py-3 pl-3 pr-10 focus:border-primary focus:ring-primary sm:text-sm appearance-none shadow-sm transition-shadow" id="activity">
+<option>Concrete Work</option>
+<option>Brickwork</option>
+<option>Excavation</option>
+<option>Plumbing</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1" for="description">Description of Work</label>
+<textarea class="block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3 transition-shadow" id="description" placeholder="Describe the work completed today..." rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Section: Materials -->
+<div class="flex flex-col mt-4 bg-white dark:bg-background-dark pb-6">
+<div class="px-4 pt-4 pb-2 flex justify-between items-center">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Materials Consumed</h3>
+</div>
+<div class="px-4 flex flex-col gap-3 mt-2">
+<!-- Material Item 1 -->
+<div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Cement (PPC)</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Ultratech 53 Grade</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">50 <span class="text-xs font-normal text-slate-500">Bags</span></p>
+</div>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<!-- Material Item 2 -->
+<div class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">grid_on</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Steel 12mm</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">TMT Bars</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-900 dark:text-white">200 <span class="text-xs font-normal text-slate-500">kg</span></p>
+</div>
+<button class="p-2 text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+<!-- Add Material Button -->
+<button class="mt-2 flex items-center justify-center gap-2 w-full py-3 rounded-lg border-2 border-dashed border-primary/30 text-primary font-semibold hover:bg-primary/5 transition-colors active:scale-[0.99] group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">add</span>
+                Add Material
+            </button>
+</div>
+</div>
+<!-- Section: Issues -->
+<div class="flex flex-col mt-4 mb-8 bg-white dark:bg-background-dark pb-6">
+<div class="px-4 pt-4 pb-2 flex justify-between items-center">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Issues / Hindrances</h3>
+<div class="flex items-center gap-2 cursor-pointer">
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium">None</span>
+<!-- Toggle Switch visual -->
+<div class="w-9 h-5 bg-slate-200 dark:bg-slate-600 rounded-full relative transition-colors">
+<div class="w-5 h-5 bg-white rounded-full shadow-md absolute left-0 top-0 border border-slate-200 dark:border-slate-500 scale-105"></div>
+</div>
+</div>
+</div>
+<div class="px-4">
+<textarea class="block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm p-3 transition-shadow" placeholder="Rain delay, material shortage, labor strike..." rows="2"></textarea>
+</div>
+</div>
+</div>
+<!-- Sticky Footer -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40">
+<button class="w-full bg-primary text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+        Submit Report
+    </button>
+</div>
+</body></html>

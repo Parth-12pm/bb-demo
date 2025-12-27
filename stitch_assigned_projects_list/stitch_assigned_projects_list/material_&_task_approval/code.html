@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Material &amp; Task Approval</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white pb-20">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-background-light dark:bg-background-dark/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+<div class="relative flex w-full flex-col">
+<div class="flex items-center px-4 py-3 justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 border-2 border-white shadow-sm cursor-pointer" data-alt="Portrait of a construction site manager" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABjH7CnzCUEt6ZoWINh6Y8QgNBfH7VrZ9OawiIMuQCpU7Zxb_Nd2hP_5RbH-rWWbrfUCz8oo3iFdXYxbdjjWnTJu0YbcaIkFn9os16lBBJZnt6FnBn8s5nc6g0Ndm_DcRwdyyFt4qn-QRKpQMfOa6oi-8XxpVBVPGlYu3i7BgvAnhgqLX4Tik2XHpZD13Q4ULBmZFHr1fYarSJGa_6DcJZh2VdF5mCv1OyKBl4lBdZWxY64Mncvw9dlKI5bomkx1TOLzg2T_sbCdBE");'>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">Approvals</h2>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Offline Indicator -->
+<div class="bg-amber-50 dark:bg-amber-900/20 border-b border-amber-100 dark:border-amber-800/30">
+<p class="text-amber-700 dark:text-amber-400 text-xs font-medium py-2 px-4 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">wifi_off</span>
+            Offline Mode - Changes will sync when online
+        </p>
+</div>
+<!-- Segmented Control -->
+<div class="px-4 py-4">
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm has-[:checked]:text-primary transition-all text-slate-500 dark:text-slate-400 text-sm font-semibold leading-normal">
+<span class="truncate">Pending</span>
+<input checked="" class="invisible w-0" name="status" type="radio" value="Pending"/>
+</label>
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm has-[:checked]:text-primary transition-all text-slate-500 dark:text-slate-400 text-sm font-semibold leading-normal">
+<span class="truncate">Approved</span>
+<input class="invisible w-0" name="status" type="radio" value="Approved"/>
+</label>
+<label class="flex cursor-pointer h-full flex-1 items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-slate-700 has-[:checked]:shadow-sm has-[:checked]:text-primary transition-all text-slate-500 dark:text-slate-400 text-sm font-semibold leading-normal">
+<span class="truncate">Rejected</span>
+<input class="invisible w-0" name="status" type="radio" value="Rejected"/>
+</label>
+</div>
+</div>
+<!-- Section Title -->
+<h3 class="text-slate-900 dark:text-white text-lg font-bold px-4 pb-3 flex items-center gap-2">
+        Pending Approvals 
+        <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">5</span>
+</h3>
+<!-- Cards Container -->
+<div class="flex flex-col gap-4 px-4">
+<!-- Card 1: Material Request -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
+<!-- Header -->
+<div class="flex justify-between items-start mb-3 pl-2">
+<span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wide">Material Request</span>
+<span class="text-slate-400 text-xs font-medium">24-10-2023</span>
+</div>
+<!-- Body -->
+<div class="flex gap-4 mb-4 pl-2">
+<div class="flex-1 min-w-0">
+<h4 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-1 truncate">Grade 53 Cement</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mb-3">Project Alpha</p>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-slate-400">person</span>
+<span class="truncate">Req: Amit Kumar (Site Eng)</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-slate-400">inventory_2</span>
+<span>Qty: 50 Bags</span>
+</div>
+</div>
+<p class="text-primary font-bold text-xl mt-3">₹ 18,500</p>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg bg-cover bg-center bg-slate-100" data-alt="Stack of cement bags on construction site" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVHUeAJB-By5hx59TSRBaBxQ-zHh_H6m0GnWm5W1l4hNgIkjRqe8IapkTDY9Y3LWXzGnqgwHan3Z5ld14HYssXa7kfDR4e7NWaFMpNwaNFshwwcBn3qqSfznXT56Z-mOElqFvG_zTasWc5aXBfc7W531aLTrYwD1wVUYk5-2JzX5Du-4U__S2J-Z_aQiYyKgDhdUbl8xUSo4KDhKBIzAf8BAIW_kXdPOIh5DHucUkuUxYilBbJ-VMdZnwoDXwNyn7qOeoYsj2f3zyZ");'>
+</div>
+</div>
+<!-- Footer / Actions -->
+<div class="flex gap-3 pl-2 pt-2 border-t border-slate-50 dark:border-slate-700/50 mt-1">
+<button class="flex-1 flex items-center justify-center gap-2 border-2 border-red-100 dark:border-red-900/50 text-red-600 dark:text-red-400 font-bold text-sm py-3 rounded-lg active:scale-95 transition-transform hover:bg-red-50 dark:hover:bg-red-900/20">
+<span class="material-symbols-outlined text-[20px]">close</span>
+                    Reject
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold text-sm py-3 rounded-lg shadow-md shadow-blue-200 dark:shadow-blue-900/20 active:scale-95 transition-transform hover:bg-blue-600">
+<span class="material-symbols-outlined text-[20px]">check</span>
+                    Approve
+                </button>
+</div>
+</div>
+<!-- Card 2: Task Completion -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+<div class="flex justify-between items-start mb-3 pl-2">
+<span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wide">Task Completion</span>
+<span class="text-slate-400 text-xs font-medium">23-10-2023</span>
+</div>
+<div class="flex gap-4 mb-4 pl-2">
+<div class="flex-1 min-w-0">
+<h4 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-1 truncate">Perimeter Wall Plastering</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mb-3">Project Beta</p>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-slate-400">engineering</span>
+<span class="truncate">Req: Suresh (Foreman)</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-green-500">check_circle</span>
+<span class="text-green-600 dark:text-green-400 font-semibold">Status: 100% Complete</span>
+</div>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg bg-cover bg-center bg-slate-100" data-alt="Plastered wall texture construction site" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmbnTQ6birOSa-f-H-_BngtOjjzRxeTjEB5ObYAdtnPinkyIyex7Fp0ZTMB92oJMdBDLDBxb14U49cKdq_GrpxjzVxFX-OTsmYm6mKXUh5FmRDEIaY1zZIZtjUI9cC3899v12pNFuDvDk8FCA5rUlIHFlReVP9p9k395PPjIFEGlvh65hA5LGjKZwbCUw3TJfZ6CUFO1LpvZ9n9i8abzY1vEjURw5e-46RBJ9mRBr5kOPPwjB1NbgYCvqK8gHXx_3Jwp5XO9PRz82b");'>
+</div>
+</div>
+<div class="flex gap-3 pl-2 pt-2 border-t border-slate-50 dark:border-slate-700/50 mt-1">
+<button class="flex-1 flex items-center justify-center gap-2 border-2 border-red-100 dark:border-red-900/50 text-red-600 dark:text-red-400 font-bold text-sm py-3 rounded-lg active:scale-95 transition-transform hover:bg-red-50 dark:hover:bg-red-900/20">
+                    Reject
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold text-sm py-3 rounded-lg shadow-md shadow-blue-200 dark:shadow-blue-900/20 active:scale-95 transition-transform hover:bg-blue-600">
+                    Approve
+                </button>
+</div>
+</div>
+<!-- Card 3: Material Request (Another one) -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-orange-500"></div>
+<div class="flex justify-between items-start mb-3 pl-2">
+<span class="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-[10px] uppercase font-bold px-2 py-1 rounded tracking-wide">Material Request</span>
+<span class="text-slate-400 text-xs font-medium">22-10-2023</span>
+</div>
+<div class="flex gap-4 mb-4 pl-2">
+<div class="flex-1 min-w-0">
+<h4 class="text-slate-900 dark:text-white font-bold text-lg leading-tight mb-1 truncate">Steel Rebar (12mm)</h4>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wide mb-3">Project Alpha</p>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-slate-400">person</span>
+<span class="truncate">Req: Amit Kumar (Site Eng)</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined text-[18px] text-slate-400">inventory_2</span>
+<span>Qty: 250 Units</span>
+</div>
+</div>
+<p class="text-primary font-bold text-xl mt-3">₹ 1,45,000</p>
+</div>
+<div class="w-24 h-24 shrink-0 rounded-lg bg-cover bg-center bg-slate-100" data-alt="Steel rebars bunched together at construction" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRDXIM6vGqEsGNCQrvvmoijK4534JRfGB6Ce2wD96oPQFM-_Yem54mI2RZyz_b_xQsIupHsaCAgLolgVTEr2Uo6DP5zgfyBsbJsuvHvj5GAR48XPWY4DG5zvPfGgFCIIhs-Xq1_eLuNrIXlbu_OuqxGeoY1Hwe10SO02FYBdc5a5wnCLeIl9PwWqOiNd059xDfxSGvEE_2vm_KNVb6igAO374e_EB36nimLiIlQiz_caV3htDdfRoU6bBa5uSai8rriaW5zxuUOPTa");'>
+</div>
+</div>
+<div class="flex gap-3 pl-2 pt-2 border-t border-slate-50 dark:border-slate-700/50 mt-1">
+<button class="flex-1 flex items-center justify-center gap-2 border-2 border-red-100 dark:border-red-900/50 text-red-600 dark:text-red-400 font-bold text-sm py-3 rounded-lg active:scale-95 transition-transform hover:bg-red-50 dark:hover:bg-red-900/20">
+                    Reject
+                </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-primary text-white font-bold text-sm py-3 rounded-lg shadow-md shadow-blue-200 dark:shadow-blue-900/20 active:scale-95 transition-transform hover:bg-blue-600">
+                    Approve
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-slate-400 dark:text-slate-500 hover:text-slate-600">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-primary">
+<span class="material-symbols-outlined text-2xl fill-current">check_box</span>
+<span class="text-[10px] font-medium">Approvals</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-full h-full text-slate-400 dark:text-slate-500 hover:text-slate-600">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</div>
+</body></html>

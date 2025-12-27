@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Material &amp; Task Approvals - Construction Manager</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0b5ec2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2632",
+                        "text-main": "#0d141b",
+                        "text-secondary": "#4c739a",
+                        "border-color": "#cfdbe7",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for table if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cfdbe7;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="bg-surface-light dark:bg-surface-dark border-b border-border-color sticky top-0 z-30">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo & Brand -->
+<div class="flex items-center gap-4">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-text-main dark:text-white hidden md:block">Construction Manager</h1>
+</div>
+<!-- Search Bar -->
+<div class="hidden md:flex flex-1 max-w-md mx-8">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border border-border-color rounded-lg leading-5 bg-background-light dark:bg-background-dark placeholder-text-secondary focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm" placeholder="Search requisitions, tasks, or IDs..." type="text"/>
+</div>
+</div>
+<!-- Right Nav Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 text-text-secondary hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full border-2 border-surface-light"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-cover bg-center border border-border-color cursor-pointer" data-alt="Profile picture of the construction manager" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBt1zw6K5G9IVNN-diRdBD-Rr10S23-J91w9PhLocBic6yccsiAKUhHm7c5N_CkW4omgawvxoeusBJs4UA_yOVUUj5jYYD9zuS2y0EM-fr3HwpnRWB5wImfVflZir2G1b995RY8h-Akp4rYvyjL6ee_F7FeVlsS3wGyXxPl9BRXc49YY5118UWPKqixHfg6T9ThFaSE8CopdfYNgtEFmIAYgRrmsEsxdt5DdVAbrWZL82_zDN6ectSyHPIEEYIxTR7mWaF62hrQ1J4');">
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex mb-6">
+<ol class="inline-flex items-center space-x-1 md:space-x-3">
+<li class="inline-flex items-center">
+<a class="inline-flex items-center text-sm font-medium text-text-secondary hover:text-primary" href="#">
+<span class="material-symbols-outlined text-[18px] mr-2">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-text-secondary text-[18px]">chevron_right</span>
+<span class="ml-1 text-sm font-medium text-text-main dark:text-white md:ml-2">Approvals</span>
+</div>
+</li>
+</ol>
+</nav>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<h2 class="text-3xl font-black tracking-tight text-text-main dark:text-white mb-2">Material &amp; Task Approvals</h2>
+<p class="text-text-secondary max-w-2xl">Review pending site requisitions, verify task completions, and manage budget allocations for active projects.</p>
+</div>
+<div class="flex gap-3">
+<button class="inline-flex items-center px-4 py-2 border border-border-color shadow-sm text-sm font-medium rounded-lg text-text-main bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:bg-surface-dark dark:text-white dark:border-gray-700 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-[20px] mr-2">download</span>
+                    Export Report
+                </button>
+<button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+<span class="material-symbols-outlined text-[20px] mr-2">add</span>
+                    New Requisition
+                </button>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-color shadow-sm flex flex-col relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[80px] text-primary">pending_actions</span>
+</div>
+<p class="text-text-secondary text-sm font-semibold uppercase tracking-wider mb-1">Pending Requests</p>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-bold text-text-main dark:text-white">12</span>
+<span class="flex items-center text-sm font-medium text-green-600 bg-green-100 dark:bg-green-900/30 px-2 py-0.5 rounded mb-1">
+<span class="material-symbols-outlined text-[14px] mr-1">trending_up</span>
+                        +2 new
+                    </span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-color shadow-sm flex flex-col relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[80px] text-primary">currency_rupee</span>
+</div>
+<p class="text-text-secondary text-sm font-semibold uppercase tracking-wider mb-1">Total Value (Pending)</p>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-bold text-text-main dark:text-white">₹ 4,50,000</span>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-color shadow-sm flex flex-col relative overflow-hidden group border-l-4 border-l-red-500">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[80px] text-red-500">warning</span>
+</div>
+<p class="text-red-600 text-sm font-semibold uppercase tracking-wider mb-1">Urgent Items</p>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-bold text-text-main dark:text-white">3</span>
+<span class="text-sm text-text-secondary mb-1">Require immediate action</span>
+</div>
+</div>
+</div>
+<!-- Tabs Navigation -->
+<div class="border-b border-border-color mb-6">
+<nav aria-label="Tabs" class="-mb-px flex space-x-8">
+<a class="border-primary text-primary whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm flex items-center" href="#">
+<span class="material-symbols-outlined mr-2 icon-filled">inventory_2</span>
+                    Material Requisitions
+                    <span class="ml-2 bg-primary/10 text-primary py-0.5 px-2 rounded-full text-xs">8</span>
+</a>
+<a class="border-transparent text-text-secondary hover:text-text-main hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm flex items-center" href="#">
+<span class="material-symbols-outlined mr-2">task_alt</span>
+                    Task Verifications
+                    <span class="ml-2 bg-gray-100 text-text-secondary py-0.5 px-2 rounded-full text-xs">4</span>
+</a>
+</nav>
+</div>
+<!-- Filter Toolbar -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-lg border border-border-color p-4 mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<!-- Location/Site Filter -->
+<div class="relative min-w-[200px]">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<select class="block w-full pl-10 pr-10 py-2 text-sm border-border-color rounded-md bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary">
+<option>All Sites</option>
+<option>Bangalore - Sector 4</option>
+<option>Hyderabad - Tech Park</option>
+<option>Mumbai - Sky Towers</option>
+</select>
+</div>
+<!-- Date Filter -->
+<div class="relative min-w-[200px]">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 text-sm border-border-color rounded-md bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary" placeholder="DD-MM-YYYY" type="text" value="24-10-2023"/>
+</div>
+<!-- Status Filter -->
+<div class="relative min-w-[160px]">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</div>
+<select class="block w-full pl-10 pr-10 py-2 text-sm border-border-color rounded-md bg-background-light dark:bg-background-dark focus:ring-primary focus:border-primary">
+<option>Status: All</option>
+<option>Pending</option>
+<option>Urgent</option>
+<option>On Hold</option>
+</select>
+</div>
+</div>
+<div class="flex gap-2 w-full md:w-auto justify-end">
+<button class="p-2 text-text-secondary hover:bg-gray-100 rounded-md dark:hover:bg-gray-800" title="Grid View">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 text-primary bg-primary/10 rounded-md" title="List View">
+<span class="material-symbols-outlined">view_list</span>
+</button>
+</div>
+</div>
+<!-- Main Data Table -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl border border-border-color shadow-sm overflow-hidden">
+<div class="overflow-x-auto custom-scrollbar">
+<table class="min-w-full divide-y divide-border-color">
+<thead class="bg-gray-50 dark:bg-gray-800">
+<tr>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Details</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Date &amp; Site</th>
+<th class="px-6 py-4 text-left text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Quantity</th>
+<th class="px-6 py-4 text-right text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Est. Cost (INR)</th>
+<th class="px-6 py-4 text-center text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Status</th>
+<th class="px-6 py-4 text-right text-xs font-bold text-text-secondary uppercase tracking-wider" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="bg-surface-light dark:bg-surface-dark divide-y divide-border-color">
+<!-- Row 1: Urgent -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors group">
+<td class="px-6 py-4 whitespace-nowrap">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<div class="ml-4">
+<div class="text-sm font-bold text-text-main dark:text-white">Ultratech Cement (PPC)</div>
+<div class="text-xs text-text-secondary">Req ID: #MAT-2049 • By: Rajesh Kumar</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">24-10-2023</div>
+<div class="text-xs text-text-secondary">Block A, Fdn</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">500 Bags</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<div class="text-sm font-bold text-text-main dark:text-white">₹ 1,90,000</div>
+<div class="text-xs text-text-secondary">₹ 380 / unit</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300 border border-red-200 dark:border-red-900">
+                                    Urgent
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2">
+<button class="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 p-1.5 rounded-md transition-colors" title="Approve">
+<span class="material-symbols-outlined">check</span>
+</button>
+<button class="text-orange-600 hover:text-orange-900 bg-orange-50 hover:bg-orange-100 p-1.5 rounded-md transition-colors" title="Request Revision">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors" title="Reject">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">construction</span>
+</div>
+<div class="ml-4">
+<div class="text-sm font-bold text-text-main dark:text-white">TMT Steel Bars (12mm)</div>
+<div class="text-xs text-text-secondary">Req ID: #MAT-2048 • By: Anil Singh</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">23-10-2023</div>
+<div class="text-xs text-text-secondary">Site B, Column Work</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">2.5 Tons</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<div class="text-sm font-bold text-text-main dark:text-white">₹ 1,45,000</div>
+<div class="text-xs text-text-secondary">₹ 58,000 / ton</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-900">
+                                    Pending Review
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2">
+<button class="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">check</span>
+</button>
+<button class="text-orange-600 hover:text-orange-900 bg-orange-50 hover:bg-orange-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">format_paint</span>
+</div>
+<div class="ml-4">
+<div class="text-sm font-bold text-text-main dark:text-white">Asian Paints (Ext. Emulsion)</div>
+<div class="text-xs text-text-secondary">Req ID: #MAT-2047 • By: Vijay M.</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">23-10-2023</div>
+<div class="text-xs text-text-secondary">Club House</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">120 Liters</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<div class="text-sm font-bold text-text-main dark:text-white">₹ 42,000</div>
+<div class="text-xs text-text-secondary">₹ 350 / liter</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-900">
+                                    Pending Review
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2">
+<button class="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">check</span>
+</button>
+<button class="text-orange-600 hover:text-orange-900 bg-orange-50 hover:bg-orange-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">plumbing</span>
+</div>
+<div class="ml-4">
+<div class="text-sm font-bold text-text-main dark:text-white">PVC Pipes (4 inch)</div>
+<div class="text-xs text-text-secondary">Req ID: #MAT-2045 • By: R. Sharma</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">22-10-2023</div>
+<div class="text-xs text-text-secondary">Site A, Plumbing</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">200 Feet</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<div class="text-sm font-bold text-text-main dark:text-white">₹ 18,500</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900/40 dark:text-orange-300 border border-orange-200 dark:border-orange-900">
+                                    Revision Req
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2">
+<button class="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">check</span>
+</button>
+<button class="text-orange-600 hover:text-orange-900 bg-orange-50 hover:bg-orange-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</button>
+<button class="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors bg-gray-50/50">
+<td class="px-6 py-4 whitespace-nowrap">
+<input class="rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-10 w-10 flex-shrink-0 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div class="ml-4">
+<div class="text-sm font-bold text-text-main dark:text-white">Vitrified Tiles (2x2)</div>
+<div class="text-xs text-text-secondary">Req ID: #MAT-2042 • By: K. Reddy</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">21-10-2023</div>
+<div class="text-xs text-text-secondary">Flat 201-204</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="text-sm text-text-main dark:text-gray-300">80 Boxes</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<div class="text-sm font-bold text-text-main dark:text-white">₹ 54,500</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-center">
+<span class="px-2.5 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600">
+                                    Approved
+                                </span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+<div class="flex items-center justify-end gap-2 text-gray-400">
+<button class="hover:text-primary transition-colors">View Details</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="bg-surface-light dark:bg-surface-dark px-4 py-3 flex items-center justify-between border-t border-border-color sm:px-6">
+<div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-text-secondary">
+                            Showing <span class="font-medium text-text-main dark:text-white">1</span> to <span class="font-medium text-text-main dark:text-white">5</span> of <span class="font-medium text-text-main dark:text-white">12</span> results
+                        </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+<a class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-border-color bg-surface-light text-sm font-medium text-text-secondary hover:bg-gray-50 dark:bg-surface-dark dark:hover:bg-gray-800" href="#">
+<span class="sr-only">Previous</span>
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</a>
+<a aria-current="page" class="z-10 bg-primary/10 border-primary text-primary relative inline-flex items-center px-4 py-2 border text-sm font-bold" href="#">1</a>
+<a class="bg-surface-light border-border-color text-text-secondary hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium dark:bg-surface-dark dark:hover:bg-gray-800" href="#">2</a>
+<a class="bg-surface-light border-border-color text-text-secondary hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium dark:bg-surface-dark dark:hover:bg-gray-800" href="#">3</a>
+<a class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-border-color bg-surface-light text-sm font-medium text-text-secondary hover:bg-gray-50 dark:bg-surface-dark dark:hover:bg-gray-800" href="#">
+<span class="sr-only">Next</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Optional Floating Action Button for mobile -->
+<button class="md:hidden fixed bottom-6 right-6 h-14 w-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary z-50">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+</body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offline Sync Status</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-white dark:bg-slate-900 shadow-xl">
+<!-- Header -->
+<header class="flex items-center bg-white dark:bg-slate-900 p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-100 dark:border-slate-800">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Sync Status</h2>
+</header>
+<!-- Status & Action Panel -->
+<div class="p-4 w-full">
+<div class="flex flex-col gap-4 rounded-xl border border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 p-5 shadow-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-red-600 dark:text-red-400 mt-1">error</span>
+<div class="flex flex-col gap-1 flex-1">
+<p class="text-slate-900 dark:text-white text-base font-bold leading-tight">Attention Needed</p>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-normal leading-normal">
+                            3 items failed to upload. Last sync attempt: 10:15 AM
+                        </p>
+</div>
+</div>
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-700 transition-colors text-white text-sm font-medium leading-normal shadow-sm active:scale-95">
+<span class="truncate">Retry All Failed Items</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="pb-2 sticky top-[60px] z-10 bg-white dark:bg-slate-900">
+<div class="flex border-b border-slate-200 dark:border-slate-800 px-4 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pb-3 pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">All</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pb-3 pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Pending</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-slate-900 dark:text-white pb-3 pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Failed <span class="ml-1 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-medium text-white bg-red-500 rounded-full">3</span></p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 pb-3 pt-4 flex-1 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Synced</p>
+</a>
+</div>
+</div>
+<!-- List Items -->
+<div class="flex flex-col pb-20">
+<!-- Failed Item 1 -->
+<div class="group relative">
+<div class="flex items-start gap-4 bg-white dark:bg-slate-900 px-4 py-4 justify-between border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-start gap-3 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12 mt-1">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Purchase Order #402</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">₹ 45,000 • 24-10-2023</p>
+<div class="flex items-center gap-1 mt-1 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[16px]">wifi_off</span>
+<span class="text-xs font-semibold">Connection Timeout</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 pt-2">
+<button aria-label="Retry" class="size-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Failed Item 2 -->
+<div class="group relative">
+<div class="flex items-start gap-4 bg-white dark:bg-slate-900 px-4 py-4 justify-between border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-start gap-3 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12 mt-1">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Site Photos: Block B</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">5 Images • 24-10-2023</p>
+<div class="flex items-center gap-1 mt-1 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[16px]">cloud_off</span>
+<span class="text-xs font-semibold">Upload Interrupted</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 pt-2">
+<button aria-label="Retry" class="size-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Failed Item 3 -->
+<div class="group relative">
+<div class="flex items-start gap-4 bg-white dark:bg-slate-900 px-4 py-4 justify-between border-b border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<div class="flex items-start gap-3 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-12 mt-1">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal line-clamp-1">New Worker Registration</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-0.5">Ramesh Kumar • 24-10-2023</p>
+<div class="flex items-center gap-1 mt-1 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[16px]">dns</span>
+<span class="text-xs font-semibold">Server Error (500)</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 pt-2">
+<button aria-label="Retry" class="size-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-primary hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pending Item (Example for visual context although tab is Failed) -->
+<div class="px-4 pt-6 pb-2">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Recently Synced</p>
+</div>
+<div class="group relative opacity-60 grayscale-[0.5]">
+<div class="flex items-start gap-4 bg-white dark:bg-slate-900 px-4 py-3 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-3 flex-1">
+<div class="text-slate-600 dark:text-slate-300 flex items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 size-10 mt-1">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal line-clamp-1">Material Log: Cement</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">150 Bags • 23-10-2023</p>
+</div>
+</div>
+<div class="shrink-0 pt-2">
+<div class="flex items-center gap-1 text-green-600 dark:text-green-500">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="text-xs font-medium">Synced</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Info / Bottom Status -->
+<div class="fixed bottom-6 left-0 right-0 px-4 pointer-events-none max-w-md mx-auto">
+<div class="bg-slate-800/90 dark:bg-slate-700/90 backdrop-blur-sm text-white text-xs py-2 px-4 rounded-full shadow-lg text-center mx-auto w-fit">
+                Last synced: 24-10-2023 at 10:15 AM
+             </div>
+</div>
+</div>
+</body></html>

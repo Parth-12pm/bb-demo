@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Assigned Projects List</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Lexend -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- Offline Indicator -->
+<div class="bg-orange-100 dark:bg-orange-900/30 w-full py-1 px-4 flex items-center justify-center gap-2 border-b border-orange-200 dark:border-orange-800/50 hidden">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-400 text-sm">wifi_off</span>
+<p class="text-xs font-medium text-orange-700 dark:text-orange-300">You are in offline mode</p>
+</div>
+<!-- Top App Bar -->
+<header class="sticky top-0 z-20 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm px-4 pt-6 pb-2 border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-800 dark:text-white">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Assigned Projects</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-800 dark:text-white">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-slate-900"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwXKH5epkuyAGTDiDEhena-McKWPNZ9Obr5YSQK-Mfet7rufkzBO74lKIAAeu9SkTF_zduqQR_SLRcCdfboqSEt7ksoNfEYrr_M4qltuQMeQkIs_Wz01y6bOg1ZgUI-h8zzHHErrQ5dIyjqN-ZcaeTMzltLLEveZXyR4DF4jxi_DbLkv-jqOjlvo3wW3S8A21L_AihepsWyNMiHnIyoKisWOgGFG72LRVB7BS13cP7Lx2ERAcR_gGP8iLxcnujXBfYR8KVzKiDeFvn"/>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full p-3 pl-10 text-sm text-slate-900 border border-slate-200 rounded-xl bg-white dark:bg-slate-800 dark:border-slate-700 dark:placeholder-slate-400 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Search by Name or Project ID..." required="" type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-2">
+<button class="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Status Filter Chips -->
+<div class="w-full overflow-x-auto no-scrollbar py-3 pl-4 bg-background-light dark:bg-background-dark">
+<div class="flex gap-2 pr-4">
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-primary text-white text-sm font-medium shadow-md shadow-primary/20">
+                    All
+                </button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap">
+                    Action Required <span class="ml-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-100 text-[10px] font-bold text-red-600">3</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap">
+                    In Progress
+                </button>
+<button class="flex h-8 shrink-0 items-center justify-center px-4 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium whitespace-nowrap">
+                    Delayed
+                </button>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 px-4 pb-24">
+<!-- Section Header -->
+<div class="flex items-center justify-between py-3">
+<h3 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Active Projects (3)</h3>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">Sort by: Priority</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Card 1: Critical / Action Required -->
+<div class="group relative flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-l-4 border-slate-100 dark:border-slate-700 border-l-red-500">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/30 px-2 py-0.5 text-xs font-medium text-red-700 dark:text-red-300 ring-1 ring-inset ring-red-600/10">Action Required</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Oberoi Sky City - Wing B</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">ID: PRJ-Mum-042 • Mumbai</p>
+</div>
+<div class="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-100">
+<div class="h-full w-full bg-cover bg-center" data-alt="Construction site of a high-rise building" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXolfMkcEfzrKLbloMPw9Y-NPwLX7nrfAS0gt1NoTTBA670ym7sJ_NQ_22wsrK29NbNISqwcJ0WxezD1JcTPUI6I-c_DXxj2mzW363V1QJh3C9kaoJs7xyuqA1uMxmfSyI7o3tSXYLeoe_0p5aLPm4iC5eCg-yThhcz6aj12VSu3U_2rUIELVXb2atZhTJ6iH2BsJ2NP2c5jDC5eRdrEJ8FM2ApRB1sr2ktRcIf6eyns6BNx5OHOduz1tTRX2vIYqi2b5hp4C0oECI');"></div>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 border-t border-slate-100 dark:border-slate-700 pt-3">
+<div class="flex flex-col">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Budget</p>
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-200">₹ 4.5 Cr</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Pending</p>
+<div class="flex items-center gap-1 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-[16px]">assignment_late</span>
+<p class="text-sm font-semibold">3 Approvals</p>
+</div>
+</div>
+</div>
+<button class="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-red-50 dark:bg-red-900/20 py-2.5 text-sm font-semibold text-red-600 dark:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
+                        Resolve Issues
+                    </button>
+</div>
+<!-- Card 2: In Progress -->
+<div class="group relative flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-green-50 dark:bg-green-900/30 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300 ring-1 ring-inset ring-green-600/20">In Progress</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">Green Valley Villa</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">ID: PRJ-Pun-108 • Pune</p>
+</div>
+<div class="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-100">
+<div class="h-full w-full bg-cover bg-center" data-alt="Residential villa construction site" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvgn8RhJVF7pvynEHrfyynBxZzFB7uRHNytEDg417iMF3bho400nbm4nUqJesvUvnTPlali-UBZD8zA0tU_-_SR70nQbJOgEBLtBMiMA4d778NFyPUcUP5wk6BTKXz1CMxTG3yY62yAgtDu5xbndoKgj4wOZvDd5NjQ8bIMztg6OCVelk_R3_5vXwmjtFmY8pMq2Kjzp78JN2WfAXpdr7DacbmYK7CoTdPSRfTu60roIMw1FV5_7ZqvwIAkTaTiFRL6TZUk1ptqwD8');"></div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full">
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Completion</span>
+<span class="font-bold text-primary">45%</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 45%"></div>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 border-t border-slate-100 dark:border-slate-700 pt-3">
+<div class="flex flex-col">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Budget</p>
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-200">₹ 1.2 Cr</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">End Date</p>
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-200">15-08-2024</p>
+</div>
+</div>
+</div>
+<!-- Card 3: Delayed -->
+<div class="group relative flex flex-col gap-3 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-start justify-between gap-3">
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center rounded-md bg-orange-50 dark:bg-orange-900/30 px-2 py-0.5 text-xs font-medium text-orange-700 dark:text-orange-300 ring-1 ring-inset ring-orange-600/20">Delayed</span>
+</div>
+<h3 class="text-base font-bold text-slate-900 dark:text-white truncate">NH-48 Road Widening</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">ID: PRJ-Hwy-009 • Highway</p>
+</div>
+<div class="h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-100">
+<div class="h-full w-full bg-cover bg-center" data-alt="Road construction with heavy machinery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD560SGSX2u-xwOq95bXp_tPogow67yc3lrQJQNZEn31nl82WUFOS85JVxWHBUsrh3IwAvCaXv4wN9yMeLNZlm0TAhHIhIZgt36xNsHYctL7JsHojszg4aG2FgQ_KfEuRHDaah37z47fKie7eZCQGlwARrbHtM9IxTk9osDth2b2lmEgLT6yZ-bVbnK80OTIGwjVcxHaG3UazZ2oO9K2FoHbza2__KnZR8Gcs3tk1gFqqqFL8HguFyeiW59vuSyZU063PrPuabDzEd1');"></div>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 border-t border-slate-100 dark:border-slate-700 pt-3">
+<div class="flex flex-col">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Budget</p>
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-200">₹ 85 L</p>
+</div>
+<div class="flex flex-col items-end">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Start Date</p>
+<p class="text-sm font-semibold text-slate-700 dark:text-slate-200">12-01-2024</p>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="h-4"></div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 z-30 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pb-safe mx-auto max-w-md">
+<div class="flex items-center justify-around h-16">
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-primary">
+<span class="material-symbols-outlined text-[24px]">domain</span>
+<span class="text-[10px] font-medium">Projects</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[24px]">task</span>
+<span class="text-[10px] font-medium">Tasks</span>
+</button>
+<!-- Floating Action Button effect for center item -->
+<div class="relative -top-5">
+<button class="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:bg-blue-600 transition-all">
+<span class="material-symbols-outlined text-[24px]">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 relative">
+<span class="material-symbols-outlined text-[24px]">approval</span>
+<span class="absolute top-3 right-5 h-2 w-2 rounded-full bg-red-500 border border-white dark:border-slate-900"></span>
+<span class="text-[10px] font-medium">Approvals</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</button>
+</div>
+</nav>
+</div>
+<script>
+        // Simple script to handle safe area on mobile browsers if needed
+        // No logic required by prompt, pure styling
+    </script>
+</body></html>

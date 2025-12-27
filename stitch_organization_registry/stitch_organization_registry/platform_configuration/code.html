@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Platform Configuration - Ramesh Construction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans", "sans-serif"],
+                        "body": ["Manrope", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] font-display antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="flex w-72 flex-col justify-between border-r border-[#e7edf3] bg-white dark:bg-[#1a2632] p-5 h-full overflow-y-auto shrink-0 z-20">
+<div class="flex flex-col gap-8">
+<!-- Brand -->
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shadow-sm" data-alt="Abstract blue geometric construction logo" style="background-image: linear-gradient(135deg, #137fec 0%, #0b4e92 100%);">
+<div class="flex items-center justify-center w-full h-full text-white">
+<span class="material-symbols-outlined text-[20px]">apartment</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-[#0d141b] dark:text-white text-base font-bold leading-normal">Ramesh Construction</h1>
+<p class="text-[#4c739a] text-xs font-medium leading-normal">Admin Console</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#e7edf3] dark:bg-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-[#0d141b] dark:text-white">settings</span>
+<p class="text-[#0d141b] dark:text-white text-sm font-bold leading-normal">General</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#4c739a]">currency_rupee</span>
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Financials</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#4c739a]">verified_user</span>
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Security</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#4c739a]">notifications</span>
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Notifications</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#4c739a]">group</span>
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Users</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[#4c739a]">database</span>
+<p class="text-[#4c739a] text-sm font-medium leading-normal">Data &amp; Logs</p>
+</div>
+</div>
+</div>
+<!-- Logout -->
+<button class="flex w-full cursor-pointer items-center gap-2 justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-100 hover:bg-slate-200 text-[#4c739a] text-sm font-bold leading-normal transition-colors mt-auto">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span class="truncate">Logout</span>
+</button>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark relative">
+<!-- Content Container -->
+<div class="layout-content-container flex flex-col max-w-[1000px] w-full mx-auto p-6 md:p-10 gap-8">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 items-center">
+<a class="text-[#4c739a] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[#4c739a] text-sm">chevron_right</span>
+<a class="text-[#4c739a] text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Admin</a>
+<span class="material-symbols-outlined text-[#4c739a] text-sm">chevron_right</span>
+<span class="text-[#0d141b] dark:text-white text-sm font-medium leading-normal">Platform Configuration</span>
+</div>
+<!-- Page Heading & Actions -->
+<div class="flex flex-wrap justify-between items-end gap-4 border-b border-[#e7edf3] pb-6">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0d141b] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">Platform Configuration</h1>
+<p class="text-[#4c739a] text-base font-normal leading-normal">Manage global settings, regional defaults, and policies for Ramesh Construction Pvt Ltd.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 border border-[#cfdbe7] bg-white text-[#0d141b] text-sm font-bold hover:bg-slate-50 transition-colors">
+                            Cancel
+                        </button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-sm">
+                            Save Changes
+                        </button>
+</div>
+</div>
+<!-- Section 1: Localization & Standards -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">public</span>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold">Localization &amp; Standards</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white dark:bg-[#1a2632] p-6 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700">
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Timezone</p>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white px-4 h-12 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/50 disabled:opacity-70 disabled:cursor-not-allowed">
+<option selected="" value="IST">India Standard Time (IST) - Kolkata</option>
+<option value="UTC">UTC</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[#4c739a] pointer-events-none">expand_more</span>
+</div>
+<p class="text-[#4c739a] text-xs">System-wide default timezone.</p>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Date Format</p>
+<input class="w-full rounded-lg border border-[#cfdbe7] bg-slate-100 text-[#4c739a] px-4 h-12 text-sm font-medium cursor-not-allowed" disabled="" value="DD-MM-YYYY"/>
+<p class="text-[#4c739a] text-xs">Fixed for Indian compliance.</p>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Base Currency</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#4c739a]">currency_rupee</span>
+<input class="w-full rounded-lg border border-[#cfdbe7] bg-slate-100 text-[#4c739a] pl-10 pr-4 h-12 text-sm font-medium cursor-not-allowed" disabled="" value="INR (Indian Rupee)"/>
+</div>
+<p class="text-[#4c739a] text-xs">Cannot be changed after setup.</p>
+</label>
+</div>
+</div>
+<!-- Section 2: Financial Defaults -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance</span>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold">Financial Defaults</h2>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700 flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Default GST Rate (%)</p>
+<input class="w-full rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white px-4 h-12 text-sm font-normal focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all placeholder:text-slate-400" placeholder="18" type="number" value="18"/>
+<p class="text-[#4c739a] text-xs">Applied to new material requisitions.</p>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">TDS Deduction Threshold (₹)</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[#4c739a]">payments</span>
+<input class="w-full rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white pl-10 pr-4 h-12 text-sm font-normal focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all placeholder:text-slate-400" type="text" value="30,000"/>
+</div>
+<p class="text-[#4c739a] text-xs">Per section 194C of IT Act.</p>
+</label>
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Labor Wage Cycle</p>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white px-4 h-12 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-primary/50">
+<option selected="" value="weekly">Weekly (Saturday)</option>
+<option value="biweekly">Bi-Weekly</option>
+<option value="monthly">Monthly</option>
+<option value="daily">Daily</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[#4c739a] pointer-events-none">expand_more</span>
+</div>
+<p class="text-[#4c739a] text-xs">Default frequency for generating wage sheets.</p>
+</label>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Section 3: Data & Security -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">security</span>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold">Data &amp; Security</h2>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700 flex flex-col gap-6 h-full">
+<label class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Project Data Retention</p>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white px-4 h-12 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-primary/50">
+<option value="5">5 Years</option>
+<option selected="" value="7">7 Years (Recommended)</option>
+<option value="10">10 Years</option>
+<option value="forever">Indefinite</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[#4c739a] pointer-events-none">expand_more</span>
+</div>
+</label>
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+<div class="flex flex-col gap-1">
+<p class="text-[#0d141b] dark:text-white text-sm font-bold">Force 2FA</p>
+<p class="text-[#4c739a] text-xs">Require OTP for Admin logins</p>
+</div>
+<!-- Toggle Component -->
+<button aria-pressed="true" class="relative w-12 h-6 bg-primary rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+<span class="absolute right-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm transform transition-transform"></span>
+</button>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-slate-200 text-sm font-medium">Session Timeout (Minutes)</p>
+<input class="w-full rounded-lg border border-[#cfdbe7] bg-slate-50 dark:bg-slate-800 dark:border-slate-600 dark:text-white px-4 h-12 text-sm font-normal focus:ring-2 focus:ring-primary/50 outline-none" type="number" value="15"/>
+</div>
+</div>
+</div>
+<!-- Section 4: Notifications -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold">Notifications</h2>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-6 rounded-xl shadow-sm border border-[#e7edf3] dark:border-slate-700 flex flex-col gap-4 h-full">
+<p class="text-[#4c739a] text-sm mb-2">Configure how the system communicates with site engineers and admins.</p>
+<div class="flex items-center justify-between p-4 border border-[#e7edf3] dark:border-slate-600 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#0d141b] dark:text-white text-sm font-bold">Daily Site Reports</p>
+<p class="text-[#4c739a] text-xs">Email summary at 8:00 PM IST</p>
+</div>
+</div>
+<button aria-pressed="true" class="relative w-12 h-6 bg-primary rounded-full transition-colors focus:outline-none">
+<span class="absolute right-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 border border-[#e7edf3] dark:border-slate-600 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="bg-green-50 dark:bg-green-900/30 p-2 rounded-lg text-green-600">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#0d141b] dark:text-white text-sm font-bold">WhatsApp Integration</p>
+<p class="text-[#4c739a] text-xs">Send alerts to Site Supervisors</p>
+</div>
+</div>
+<button aria-pressed="false" class="relative w-12 h-6 bg-slate-200 dark:bg-slate-600 rounded-full transition-colors focus:outline-none">
+<span class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 border border-[#e7edf3] dark:border-slate-600 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="bg-orange-50 dark:bg-orange-900/30 p-2 rounded-lg text-orange-600">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<div class="flex flex-col">
+<p class="text-[#0d141b] dark:text-white text-sm font-bold">Inventory Low Stock</p>
+<p class="text-[#4c739a] text-xs">Push notifications to Store Manager</p>
+</div>
+</div>
+<button aria-pressed="true" class="relative w-12 h-6 bg-primary rounded-full transition-colors focus:outline-none">
+<span class="absolute right-1 top-1 bg-white w-4 h-4 rounded-full shadow-sm"></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<div class="flex justify-center py-6">
+<p class="text-[#4c739a] text-xs text-center">System Version v2.4.0-IND • Last updated by Admin on 12-10-2023</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Material / Task Request</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Date picker custom styling to match theme */
+        ::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display flex flex-col min-h-screen items-center justify-center p-0 sm:p-4">
+<!-- Mobile Device Container -->
+<div class="relative flex h-[100dvh] sm:h-[800px] w-full sm:max-w-[400px] flex-col bg-white dark:bg-background-dark sm:rounded-2xl sm:shadow-2xl overflow-hidden border border-transparent sm:border-slate-200 dark:sm:border-slate-800">
+<!-- Top App Bar -->
+<div class="flex items-center justify-between px-4 py-3 bg-white dark:bg-background-dark z-20 sticky top-0 border-b border-slate-100 dark:border-slate-800/50">
+<button class="text-slate-900 dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">New Request</h2>
+</div>
+<!-- Scrollable Form Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar bg-white dark:bg-background-dark">
+<!-- Request Type Toggle -->
+<div class="px-5 py-4">
+<div class="flex h-12 w-full items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 p-1">
+<label class="group relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 text-sm font-bold transition-all duration-200">
+<input checked="" class="peer invisible w-0 absolute" name="requestType" type="radio" value="Material"/>
+<span class="absolute inset-0 bg-white dark:bg-slate-700 shadow-sm rounded-lg opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+<span class="relative z-10 text-slate-500 peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+                            Material
+                        </span>
+</label>
+<label class="group relative flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 text-sm font-bold transition-all duration-200">
+<input class="peer invisible w-0 absolute" name="requestType" type="radio" value="Task"/>
+<span class="absolute inset-0 bg-white dark:bg-slate-700 shadow-sm rounded-lg opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+<span class="relative z-10 text-slate-500 peer-checked:text-primary dark:text-slate-400 dark:peer-checked:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+                            Task
+                        </span>
+</label>
+</div>
+</div>
+<form class="flex flex-col gap-5 px-5 pb-32">
+<!-- Select Item -->
+<div class="group/field">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Select Material</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white h-14 pl-4 pr-10 text-base font-medium transition-all shadow-sm">
+<option disabled="" selected="" value="">Search or select item...</option>
+<option value="cement">Cement (Grade 43)</option>
+<option value="steel">Steel Rebar (TMT)</option>
+<option value="sand">River Sand</option>
+<option value="bricks">Red Bricks</option>
+<option value="aggregate">Aggregate (20mm)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+<span class="material-symbols-outlined">search</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="group/field">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Specifications / Description</label>
+<textarea class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white p-4 text-base font-medium transition-all shadow-sm resize-none h-24 placeholder:text-slate-400" placeholder="e.g. Specific brand, grade, or special delivery instructions..."></textarea>
+</div>
+<!-- Quantity & Unit -->
+<div class="flex gap-4">
+<div class="group/field flex-1">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Quantity</label>
+<input class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white h-14 p-4 text-base font-medium transition-all shadow-sm placeholder:text-slate-400" placeholder="0.00" type="number"/>
+</div>
+<div class="group/field w-[35%]">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Unit</label>
+<div class="relative">
+<select class="w-full appearance-none rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white h-14 pl-3 pr-8 text-base font-medium transition-all shadow-sm">
+<option>Bags</option>
+<option>Kg</option>
+<option>Nos</option>
+<option>Ft</option>
+<option>M3</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Required Date -->
+<div class="group/field">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Required By</label>
+<div class="relative flex items-center">
+<input class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white h-14 p-4 text-base font-medium transition-all shadow-sm placeholder:text-slate-400" type="date"/>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 bg-transparent">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+</div>
+<!-- Justification -->
+<div class="group/field">
+<label class="block text-slate-900 dark:text-white text-sm font-bold mb-2 ml-1">Reason / Justification</label>
+<textarea class="w-full rounded-xl bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:bg-white dark:focus:bg-slate-900 focus:ring-0 text-slate-900 dark:text-white p-4 text-base font-medium transition-all shadow-sm resize-none h-20 placeholder:text-slate-400" placeholder="Why is this required now?"></textarea>
+</div>
+</form>
+</div>
+<!-- Sticky Footer Action -->
+<div class="absolute bottom-0 left-0 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 p-4 pb-6 z-20">
+<!-- Offline Status Indicator -->
+<div class="flex items-center justify-center gap-1.5 mb-3 text-xs font-medium text-slate-500">
+<span class="material-symbols-outlined text-[16px]">wifi_off</span>
+<span>Offline Mode • Request will queue locally</span>
+</div>
+<button class="w-full bg-primary hover:bg-blue-600 text-white font-bold h-14 rounded-xl shadow-lg shadow-blue-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span>Submit Request</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</body></html>

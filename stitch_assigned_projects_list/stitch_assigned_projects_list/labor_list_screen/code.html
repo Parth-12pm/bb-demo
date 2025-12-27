@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Labor List Screen</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased">
+<!-- Mobile Container -->
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl">
+<!-- iOS Style Header -->
+<header class="sticky top-0 z-30 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 pt-12 pb-3 px-4 transition-all duration-300">
+<div class="relative flex items-center justify-between h-11">
+<button class="p-2 -ml-2 text-primary rounded-full active:bg-slate-100 dark:active:bg-slate-800">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<div class="flex flex-col items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3/5">
+<h1 class="text-base font-bold text-slate-900 dark:text-white truncate max-w-full">Site A - Sector 42</h1>
+<span class="text-xs font-normal text-slate-500 dark:text-slate-400">25-10-2023</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 -mr-2 text-slate-400 hover:text-primary transition-colors rounded-full active:bg-slate-100 dark:active:bg-slate-800">
+<span class="material-symbols-outlined" title="Data Synced">cloud_done</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Scroll Area -->
+<main class="flex-1 px-4 py-5 flex flex-col gap-6 pb-28">
+<!-- Stats Overview -->
+<section class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-24">
+<div class="flex items-start justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Total Assigned</p>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-xl">groups</span>
+</div>
+<p class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">45</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-4 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-24">
+<div class="flex items-start justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Present</p>
+<span class="bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded">71%</span>
+</div>
+<div class="flex items-baseline gap-1">
+<p class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">32</p>
+<span class="text-xs text-slate-400 font-medium">/ 45</span>
+</div>
+</div>
+</section>
+<!-- Geo-fence Alert (Action Panel) -->
+<section class="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-lg p-4 shadow-sm relative overflow-hidden">
+<!-- Decorative background accent -->
+<div class="absolute -right-4 -top-4 bg-amber-100 dark:bg-amber-900/20 w-24 h-24 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex gap-3 mb-3">
+<div class="mt-0.5 bg-amber-100 dark:bg-amber-900/40 p-1.5 rounded-full text-amber-600 dark:text-amber-400 shrink-0 h-fit">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+</div>
+<div>
+<h2 class="text-slate-900 dark:text-white font-bold text-sm leading-tight">Attendance Action Required</h2>
+<p class="text-slate-600 dark:text-slate-300 text-sm mt-1">
+<span class="font-bold text-amber-700 dark:text-amber-400">3 Labors</span> entered site via geo-fence.
+                            </p>
+</div>
+</div>
+<div class="flex gap-3 pl-[38px]">
+<button class="flex-1 bg-white dark:bg-surface-dark text-slate-700 dark:text-slate-200 text-sm font-medium h-9 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm active:scale-95 transition-transform">
+                            Review
+                        </button>
+<button class="flex-1 bg-primary text-white text-sm font-medium h-9 rounded-lg shadow-md shadow-blue-500/20 active:scale-95 transition-transform">
+                            Approve All
+                        </button>
+</div>
+</div>
+</section>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border-none ring-1 ring-slate-200 dark:ring-slate-700 rounded-lg leading-5 bg-white dark:bg-surface-dark text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm shadow-sm transition-shadow" placeholder="Search labor by name or trade" type="text"/>
+</div>
+<!-- Labor List -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between px-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Labor List</h3>
+<div class="flex items-center gap-1 text-primary text-sm font-medium cursor-pointer">
+<span>Filter</span>
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+</div>
+</div>
+<!-- Item 1: Pending (Breach) -->
+<div class="relative bg-white dark:bg-surface-dark p-3 rounded-lg shadow-sm border-l-[3px] border-l-amber-500 border-y border-r border-y-slate-100 border-r-slate-100 dark:border-y-slate-700 dark:border-r-slate-700 flex items-center gap-3 active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="relative h-12 w-12 rounded-full bg-slate-200 shrink-0">
+<img alt="Portrait of Rahul Kumar" class="h-full w-full object-cover rounded-full" data-alt="Close up portrait of a young Indian construction worker smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnOkLJIWmwvvgaLbwIX9GtSHQ-13Zl872Bn9JNfg5dRr8LTpddkjILfFR44BKcTcYcM16u7cp3J9VURr41hS-A4-BxVRP700kAqnvmrGtXDFlg80Nrb08hv31457dLgd161TCiWxvcBpsC8tcd9HYJ6t2D1Wh4t9GIiR7JVqXho77XEbzvE_lcYFEEx4MYIjuI3OEcaTOjCteo05Vg8G6XNIu2EEt3PsSif9Rh8Wxe7q9ZZaEzD-RvriKvix-_AxhnxRiTjoQNVoZj"/>
+<div class="absolute -bottom-1 -right-1 bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-400 rounded-full p-0.5 border-2 border-white dark:border-surface-dark">
+<span class="material-symbols-outlined text-[14px] block">warning</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Rahul Kumar</h4>
+<span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 dark:bg-amber-900/30 px-1.5 py-0.5 rounded border border-amber-100 dark:border-amber-800/50">Inside</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Helper • <span class="font-mono text-[10px]">ID:8821</span></p>
+</div>
+<button class="p-2 text-slate-400 active:text-slate-600 dark:active:text-slate-200">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Item 2: Present -->
+<div class="bg-white dark:bg-surface-dark p-3 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-3 active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="h-12 w-12 rounded-full bg-slate-200 shrink-0">
+<img alt="Portrait of Vikram Singh" class="h-full w-full object-cover rounded-full" data-alt="Portrait of a senior construction supervisor with a mustache" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9_yua-tfSyNAMzSejDr4SDkrqnIIlWYLuBIWtIDR2jmuClA5Uk8T1b4UbZzVWZLbt5jAuTJnvJStXIXIHBy3VmDQRLq9CsenM48q1rmMPeoH75Eckpfi3cQH-iOVERHSh2SDvv24yaiO3oFlGDJZosJClwNgFEupVyU6MRpIGyuRSV_irIfk3QqghkB9Q4E5U0jlpL1w3dyJe5E9YBouTsRNT5rrrR_2XhDuKrcDbT4tOY_kWMOZdvkJ53u3jv11nGz4iR3SxQu50"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Vikram Singh</h4>
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 rounded border border-green-100 dark:border-green-800/50">Present</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Mason • <span class="font-mono text-[10px]">ID:4429</span></p>
+</div>
+<button class="p-2 text-slate-400 active:text-slate-600 dark:active:text-slate-200">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Item 3: Present -->
+<div class="bg-white dark:bg-surface-dark p-3 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-3 active:bg-slate-50 dark:active:bg-slate-800 transition-colors">
+<div class="h-12 w-12 rounded-full bg-slate-200 shrink-0">
+<img alt="Portrait of Amit Patel" class="h-full w-full object-cover rounded-full" data-alt="Portrait of a male worker in a blue shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqocM_BzA2Mt7rl6HKg5ilBaxpFxlZ4pVH0eKdUvK4swL2tjYL23mbo0pvWLK6W7wFg0YoONAJIBLArF_NDW0voydCBz-QdhPHyroJsCVQ3nV3cszkjTltrI42slm2rHMv-j4uQVqjA22Q_WWYej3YqMozK2GYKsw95-p6XGze3s97pGvB4VYwWL9o3NXy25kXilzsJP0bpRjWGuHmxacSTIW_09jZwB3puRECVNtnATkS6378IZIGyRIGH94Pp1MNQ-yzq0hGxypO"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white truncate pr-2">Amit Patel</h4>
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-50 dark:bg-green-900/30 px-1.5 py-0.5 rounded border border-green-100 dark:border-green-800/50">Present</span>
+</div>
+<p class="text-xs text-slate-500 dark:text-slate-400">Carpenter • <span class="font-mono text-[10px]">ID:1102</span></p>
+</div>
+<button class="p-2 text-slate-400 active:text-slate-600 dark:active:text-slate-200">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Item 4: Absent -->
+<div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-3 opacity-90">
+<div class="h-12 w-12 rounded-full bg-slate-200 shrink-0 grayscale">
+<img alt="Portrait of Sadiq Khan" class="h-full w-full object-cover rounded-full" data-alt="Portrait of a young electrician looking away" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4vZD95O-82ktDSA9CRfM5QazeV-D1ksb3-ey0yAGr0UqrusmAXbRZjERQ8i-Bh64y2RyS81tAuxe_67Za_1lAw07kSyXfdQEl854SzdBAP7B6e6Uu4infacv9EMDNsgA2SOfK7aua0Ey6j8KXaJt_CO2ESAJThaJHJ_mDsnRwqdfOU7N_O2aIHHYrNAa177dTc3C6iMopY4oLHAW-dlzMMKN1tktsufK-d3P_H6xU9cPaQHjmhF3uMVdcL176v37oQXD9YFtLn-C"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h4 class="text-sm font-bold text-slate-600 dark:text-slate-400 truncate pr-2">Sadiq Khan</h4>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded">Absent</span>
+</div>
+<p class="text-xs text-slate-400 dark:text-slate-500">Electrician • <span class="font-mono text-[10px]">ID:5592</span></p>
+</div>
+<button class="p-2 text-slate-400 active:text-slate-600 dark:active:text-slate-200">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Floating Action Button (Sticky) -->
+<div class="fixed bottom-[90px] right-6 z-40">
+<button class="h-14 w-14 rounded-full bg-primary text-white shadow-lg shadow-blue-600/30 flex items-center justify-center hover:bg-blue-600 active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<!-- Tab Bar Navigation -->
+<nav class="fixed bottom-0 w-full max-w-md bg-white dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 flex justify-around items-center h-[80px] pb-5 z-50 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-[24px]">grid_view</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-primary text-[24px]">engineering</span>
+<span class="text-[10px] font-medium text-primary">Labor</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-[24px]">calendar_month</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary">Attend.</span>
+</a>
+<a class="flex flex-col items-center gap-1 w-16 group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-[24px]">settings</span>
+<span class="text-[10px] font-medium text-slate-500 group-hover:text-primary">More</span>
+</a>
+</nav>
+</div>
+</body></html>

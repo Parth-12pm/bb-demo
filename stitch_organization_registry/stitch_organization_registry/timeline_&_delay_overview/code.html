@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Timeline &amp; Delay Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] font-display antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-white dark:bg-[#1e2936] dark:border-gray-700 px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">construction</span>
+</div>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Construction Manager</h2>
+</div>
+<div class="flex items-center gap-8 hidden md:flex">
+<nav class="flex items-center gap-6">
+<a class="text-[#4c739a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Timeline</a>
+<a class="text-[#4c739a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Budget</a>
+<a class="text-[#4c739a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Reports</a>
+<a class="text-[#4c739a] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Team</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<div class="h-8 w-[1px] bg-gray-200 dark:bg-gray-700"></div>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 border-2 border-white dark:border-gray-600 shadow-sm" data-alt="User profile picture showing a professional man" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6pEbYEA3f4FF9McB3-8uMHHyxCOCMkevXSPkDbKIEXaOZhvwTMK3FUarTPaqi-ou3iPkwK8o9oKj5FotcP62Cywy2Q-0v-GMcLXIvSXe6AUjSep_DgKFiI726Tq39Q-oMXGSb5g-wWZerOIvVs6o0RuAiM4RszCuTxvi_qFaaN7AmvCxiHdXSkuSnCdEH63W9bjf5rca3WTkWQcuabIbe-2VvoqUD_03DbrCaSoVUX_cwOwZGPMU6MEp450cYOJ5QLXhRxzjXqKo");'></div>
+<div class="hidden lg:block text-sm">
+<p class="font-bold text-[#0d141b] dark:text-white">Rajesh Kumar</p>
+<p class="text-xs text-gray-500">Owner</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center bg-background-light dark:bg-background-dark py-8 px-4 md:px-8">
+<div class="w-full max-w-[1200px] flex flex-col gap-6">
+<!-- Page Heading & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white dark:bg-[#1e2936] p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#0d141b] dark:text-white text-3xl font-black tracking-tight">Timeline &amp; Delay Overview</h1>
+<div class="flex flex-wrap items-center gap-3 text-sm text-[#4c739a] dark:text-gray-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">location_on</span> Sunshine Heights, Bangalore</span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+<span class="font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded border border-green-100 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400">Status: Active</span>
+<span class="w-1 h-1 rounded-full bg-gray-300"></span>
+<span>Last Updated: 12-10-2023</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-[#0d141b] dark:text-white text-sm font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+<span>Jan 2023 - Dec 2024</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-600 transition-colors shadow-sm shadow-blue-200 dark:shadow-none">
+<span class="material-symbols-outlined text-lg">download</span>
+<span class="hidden sm:inline">Export Report</span>
+</button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat 1 -->
+<div class="bg-white dark:bg-[#1e2936] p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between h-full group hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Total Duration</p>
+<span class="material-symbols-outlined text-gray-400 text-xl">schedule</span>
+</div>
+<div>
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">365 Days</p>
+<p class="text-xs text-gray-500 mt-1">Planned completion: 15-06-2024</p>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-white dark:bg-[#1e2936] p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between h-full group hover:border-red-400 transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-red-50 dark:bg-red-900/20 rounded-bl-full -mr-8 -mt-8"></div>
+<div class="flex justify-between items-start mb-2 relative z-10">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Schedule Variance</p>
+<span class="material-symbols-outlined text-red-500 text-xl">warning</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">14 Days</p>
+<span class="text-red-600 bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded text-xs font-bold mb-1">BEHIND</span>
+</div>
+<p class="text-xs text-red-500 mt-1">Critical path impacted</p>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-white dark:bg-[#1e2936] p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between h-full group hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Cost Overrun Est.</p>
+<span class="material-symbols-outlined text-gray-400 text-xl">attach_money</span>
+</div>
+<div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">₹ 4,50,000</p>
+<span class="text-red-600 bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded text-xs font-bold mb-1">+2.5%</span>
+</div>
+<p class="text-xs text-gray-500 mt-1">Due to labor &amp; material delays</p>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-white dark:bg-[#1e2936] p-5 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between h-full group hover:border-primary/50 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Next Milestone</p>
+<span class="material-symbols-outlined text-primary text-xl">flag</span>
+</div>
+<div>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold truncate">Roof Casting (2nd Fl)</p>
+<p class="text-xs text-gray-500 mt-1">Due: 24-11-2023</p>
+</div>
+</div>
+</div>
+<!-- Main Content Split -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Gantt Chart Area -->
+<div class="lg:col-span-2 bg-white dark:bg-[#1e2936] rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col overflow-hidden">
+<div class="p-5 border-b border-gray-100 dark:border-gray-700 flex flex-wrap justify-between items-center gap-4">
+<div>
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Gantt View: Planned vs Actual</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Comparing project baseline against real-time progress</p>
+</div>
+<!-- Legend -->
+<div class="flex items-center gap-3 text-xs font-medium">
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-sm bg-gray-200 dark:bg-gray-600"></div>
+<span class="text-gray-600 dark:text-gray-300">Planned</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-sm bg-primary"></div>
+<span class="text-gray-600 dark:text-gray-300">Actual</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-3 h-3 rounded-sm bg-red-500"></div>
+<span class="text-gray-600 dark:text-gray-300">Delayed</span>
+</div>
+</div>
+</div>
+<!-- Chart Container -->
+<div class="p-5 overflow-x-auto">
+<div class="min-w-[600px]">
+<!-- Chart Header -->
+<div class="grid grid-cols-12 gap-2 text-xs font-bold text-gray-400 dark:text-gray-500 mb-4 uppercase tracking-wider">
+<div class="col-span-3">Task Name</div>
+<div class="col-span-9 flex justify-between px-2">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+</div>
+</div>
+<!-- Gantt Rows -->
+<div class="space-y-6">
+<!-- Row 1: Excavation (Completed on time) -->
+<div class="group relative">
+<div class="grid grid-cols-12 gap-2 items-center mb-1">
+<div class="col-span-3 text-sm font-semibold text-[#0d141b] dark:text-white">Excavation</div>
+<div class="col-span-9 relative h-8 bg-gray-50 dark:bg-gray-800 rounded flex items-center px-1">
+<!-- Grid lines for visual aid -->
+<div class="absolute inset-0 grid grid-cols-6 divide-x divide-dashed divide-gray-200 dark:divide-gray-700 pointer-events-none">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+<!-- Planned Bar -->
+<div class="absolute h-4 top-1 left-[2%] w-[15%] bg-gray-300 dark:bg-gray-600 rounded-sm opacity-50"></div>
+<!-- Actual Bar -->
+<div class="absolute h-4 bottom-1 left-[2%] w-[15%] bg-green-500 rounded-sm shadow-sm"></div>
+</div>
+</div>
+<div class="pl-[25%] text-[10px] text-gray-400 hidden group-hover:block transition-all">01-01-2024 to 20-01-2024 (Completed)</div>
+</div>
+<!-- Row 2: Foundation (Slight Delay) -->
+<div class="group relative">
+<div class="grid grid-cols-12 gap-2 items-center mb-1">
+<div class="col-span-3 text-sm font-semibold text-[#0d141b] dark:text-white">Foundation Work</div>
+<div class="col-span-9 relative h-8 bg-gray-50 dark:bg-gray-800 rounded flex items-center px-1">
+<div class="absolute inset-0 grid grid-cols-6 divide-x divide-dashed divide-gray-200 dark:divide-gray-700 pointer-events-none">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+<!-- Planned Bar -->
+<div class="absolute h-4 top-1 left-[18%] w-[20%] bg-gray-300 dark:bg-gray-600 rounded-sm opacity-50"></div>
+<!-- Actual Bar -->
+<div class="absolute h-4 bottom-1 left-[18%] w-[22%] bg-primary rounded-sm shadow-sm flex overflow-hidden">
+<div class="w-[90%] bg-green-500 h-full"></div> <!-- On time part -->
+<div class="w-[10%] bg-red-500 h-full"></div> <!-- Delayed part -->
+</div>
+</div>
+</div>
+</div>
+<!-- Row 3: Plinth Beam (Active Delay) -->
+<div class="group relative">
+<div class="grid grid-cols-12 gap-2 items-center mb-1">
+<div class="col-span-3">
+<p class="text-sm font-semibold text-[#0d141b] dark:text-white">Plinth Beam</p>
+<span class="text-[10px] text-red-500 font-bold flex items-center gap-0.5"><span class="material-symbols-outlined text-[10px]">warning</span> Critical Path</span>
+</div>
+<div class="col-span-9 relative h-8 bg-gray-50 dark:bg-gray-800 rounded flex items-center px-1">
+<div class="absolute inset-0 grid grid-cols-6 divide-x divide-dashed divide-gray-200 dark:divide-gray-700 pointer-events-none">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+<!-- Planned Bar -->
+<div class="absolute h-4 top-1 left-[40%] w-[15%] bg-gray-300 dark:bg-gray-600 rounded-sm opacity-50"></div>
+<!-- Actual Bar -->
+<div class="absolute h-4 bottom-1 left-[42%] w-[10%] bg-primary rounded-sm shadow-sm border border-white dark:border-gray-700"></div>
+<!-- Projected Delay Marker -->
+<div class="absolute h-4 bottom-1 left-[52%] w-[5%] bg-red-100 dark:bg-red-900/40 border border-red-300 dark:border-red-500 border-dashed rounded-sm flex items-center justify-center">
+</div>
+</div>
+</div>
+</div>
+<!-- Row 4: Brickwork GF -->
+<div class="group relative">
+<div class="grid grid-cols-12 gap-2 items-center mb-1">
+<div class="col-span-3 text-sm font-semibold text-[#0d141b] dark:text-white">Brickwork GF</div>
+<div class="col-span-9 relative h-8 bg-gray-50 dark:bg-gray-800 rounded flex items-center px-1">
+<div class="absolute inset-0 grid grid-cols-6 divide-x divide-dashed divide-gray-200 dark:divide-gray-700 pointer-events-none">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+<!-- Planned Bar -->
+<div class="absolute h-4 top-1 left-[58%] w-[25%] bg-gray-300 dark:bg-gray-600 rounded-sm opacity-50"></div>
+<!-- Actual Bar (Not Started) -->
+</div>
+</div>
+</div>
+<!-- Row 5: Slab Casting -->
+<div class="group relative">
+<div class="grid grid-cols-12 gap-2 items-center mb-1">
+<div class="col-span-3 text-sm font-semibold text-[#0d141b] dark:text-white">Slab Casting</div>
+<div class="col-span-9 relative h-8 bg-gray-50 dark:bg-gray-800 rounded flex items-center px-1">
+<div class="absolute inset-0 grid grid-cols-6 divide-x divide-dashed divide-gray-200 dark:divide-gray-700 pointer-events-none">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+<!-- Planned Bar -->
+<div class="absolute h-4 top-1 left-[85%] w-[15%] bg-gray-300 dark:bg-gray-600 rounded-sm opacity-50"></div>
+<!-- Diamond Milestone -->
+<div class="absolute top-1/2 -translate-y-1/2 left-[99%] w-3 h-3 bg-purple-500 rotate-45 border-2 border-white dark:border-gray-800 shadow-md z-10" title="Milestone: Structure Complete"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Deviation List & Breakdown -->
+<div class="flex flex-col gap-6">
+<!-- Delay Causes -->
+<div class="bg-white dark:bg-[#1e2936] rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm flex-1">
+<div class="p-5 border-b border-gray-100 dark:border-gray-700">
+<h3 class="text-lg font-bold text-[#0d141b] dark:text-white">Active Delays</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400">Current blockers impacting timeline</p>
+</div>
+<div class="p-0">
+<div class="flex flex-col">
+<div class="p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<div class="font-bold text-sm text-[#0d141b] dark:text-white">Material Shortage</div>
+<span class="text-xs font-bold text-red-500 bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded">+3 Days</span>
+</div>
+<p class="text-xs text-gray-500 mb-2">Cement delivery delayed from vendor.</p>
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-wider font-bold text-gray-400">Impact:</span>
+<span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-1.5 py-0.5 rounded">Plinth Beam</span>
+</div>
+</div>
+<div class="p-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<div class="font-bold text-sm text-[#0d141b] dark:text-white">Labor Strike</div>
+<span class="text-xs font-bold text-red-500 bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded">+2 Days</span>
+</div>
+<p class="text-xs text-gray-500 mb-2">Unplanned labor unavailability.</p>
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-wider font-bold text-gray-400">Impact:</span>
+<span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-1.5 py-0.5 rounded">Site Prep</span>
+</div>
+</div>
+<div class="p-4 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<div class="font-bold text-sm text-[#0d141b] dark:text-white">Design Change</div>
+<span class="text-xs font-bold text-orange-500 bg-orange-50 dark:bg-orange-900/20 px-2 py-1 rounded">Pending</span>
+</div>
+<p class="text-xs text-gray-500 mb-2">Structural revision request for stairwell.</p>
+<div class="flex items-center gap-2">
+<span class="text-[10px] uppercase tracking-wider font-bold text-gray-400">Impact:</span>
+<span class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-1.5 py-0.5 rounded">General</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resource Snapshot -->
+<div class="bg-white dark:bg-[#1e2936] rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm p-5">
+<h3 class="text-sm font-bold text-[#0d141b] dark:text-white mb-4 uppercase tracking-wide">Resource Utilization</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="font-medium text-gray-600 dark:text-gray-300">Budget Spent</span>
+<span class="font-bold text-[#0d141b] dark:text-white">65%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="font-medium text-gray-600 dark:text-gray-300">Material Consumed</span>
+<span class="font-bold text-[#0d141b] dark:text-white">42%</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-purple-500 h-2 rounded-full" style="width: 42%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="font-medium text-gray-600 dark:text-gray-300">Workforce Deployed</span>
+<span class="font-bold text-red-500">85% (High)</span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+<div class="bg-orange-400 h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer style info -->
+<div class="text-center py-6 text-sm text-gray-400 dark:text-gray-600">
+<p>© 2024 Construction Manager Systems. Read-only view for Owner Role.</p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

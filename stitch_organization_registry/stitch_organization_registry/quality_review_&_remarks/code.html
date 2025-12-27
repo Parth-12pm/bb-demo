@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quality Review &amp; Remarks - Construction Manager Pro</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 antialiased overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 px-6 py-3 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Construction Manager Pro</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary text-sm font-medium transition-colors" href="#">Projects</a>
+<a class="text-primary font-semibold text-sm leading-normal" href="#">Quality Control</a>
+<a class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary text-sm font-medium transition-colors" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-64 rounded-lg bg-slate-100 dark:bg-slate-800 border-none py-2 pl-10 pr-4 text-sm text-slate-900 dark:text-white focus:ring-2 focus:ring-primary placeholder:text-slate-400" placeholder="Search reports..." type="text"/>
+</div>
+<button class="relative rounded-full p-1 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 size-2 rounded-full bg-red-500"></span>
+</button>
+<div class="size-9 rounded-full bg-cover bg-center ring-2 ring-slate-100 dark:ring-slate-800 cursor-pointer" data-alt="Profile picture of the manager" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3KeN-B4ymXTivduQI8hqmeh28Ai5lLdkzFwipR2lqsvDNFp9MfiXx-2uUgp1svVJz7pr5M25oVy3a3qgJYwST1ghaYBug_106eL9VRxyN_xV2nDaX16dbO_6-XglpWVHj90UMcspsLbe95V7vO1N-jCj8o8BHEZeorwjhPuPPBwtKzRaFJizdW5LPNeXXb13f7eZCDGdPTCgoQUk2a4021xWE15HGAKVjhuiGIRoWKZ8xA_o7J-VSYcXYAscaPQP7yEvysvrMR68');"></div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto p-4 md:p-6 lg:p-8">
+<!-- Breadcrumbs -->
+<div class="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Quality Control</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-medium text-slate-900 dark:text-white">Review: #QC-2023-849</span>
+</div>
+<!-- Page Header -->
+<div class="mb-8 flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Inspection Review: #QC-2023-849</h1>
+<span class="inline-flex items-center rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 ring-1 ring-inset ring-amber-600/20">
+                        Pending Review
+                    </span>
+</div>
+<p class="text-slate-500 dark:text-slate-400">Project: Sunshine Heights | Location: Block A, 4th Floor Slab | Zone: Structural</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">print</span>
+                    Print Report
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-lg">history</span>
+                    Audit Log
+                </button>
+</div>
+</div>
+<!-- Two Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Inspection Details (Read Only) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Summary Card -->
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="border-b border-slate-200 dark:border-slate-700 px-6 py-4 bg-slate-50/50 dark:bg-slate-800/50 flex justify-between items-center">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">article</span>
+                            Work Item Details
+                        </h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700/50">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Description</span>
+<span class="text-slate-900 dark:text-white font-medium text-right">M25 Concrete Pour - Slab 3</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700/50">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Submitted By</span>
+<span class="text-slate-900 dark:text-white font-medium text-right">Rahul Sharma (Site Engineer)</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700/50">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Date of Inspection</span>
+<span class="text-slate-900 dark:text-white font-medium text-right tabular-nums">24-10-2023</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-700/50">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Contractor</span>
+<span class="text-slate-900 dark:text-white font-medium text-right">BuildWell Constructions</span>
+</div>
+<div class="flex justify-between items-center py-2">
+<span class="text-slate-500 dark:text-slate-400 text-sm">Checklist Score</span>
+<span class="text-emerald-600 dark:text-emerald-400 font-bold text-right flex items-center gap-1">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                                8/10 Passed
+                            </span>
+</div>
+</div>
+</div>
+<!-- Checklist Results -->
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden flex-1">
+<div class="border-b border-slate-200 dark:border-slate-700 px-6 py-4 bg-slate-50/50 dark:bg-slate-800/50">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                            Checklist Results
+                        </h3>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-700/50 max-h-[500px] overflow-y-auto">
+<!-- Passed Item -->
+<div class="p-4 flex gap-4 items-start">
+<div class="mt-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 p-1 text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Formwork alignment and surface finish</p>
+<p class="text-xs text-slate-500 mt-1">Found satisfactory within tolerance limits.</p>
+</div>
+</div>
+<!-- Failed Item -->
+<div class="p-4 flex gap-4 items-start bg-red-50/50 dark:bg-red-900/10">
+<div class="mt-0.5 rounded-full bg-red-100 dark:bg-red-900/30 p-1 text-red-600 dark:text-red-400">
+<span class="material-symbols-outlined text-sm font-bold">close</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Rebar spacing in Zone B</p>
+<p class="text-xs text-red-600 dark:text-red-400 mt-1">Spacing observed at 180mm, requirement is 150mm.</p>
+<div class="mt-2 flex gap-2">
+<div class="h-16 w-24 rounded bg-cover bg-center" data-alt="Close up of rebar spacing issue" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqfQRHEYbJMtGcLPRSXZc04dieSds4WQPWFvkS4qFYOcDMKIap7zIE_B03NljVBcvdtFxCCVpuNv1xjBfL5IEh8vQnAcjmETAT9jHBbJWTHjhtmUVQW53sa02oXFsE21RxSlplO3WojIZ9pH-AUVzCa-Zj38UA48k3qFUNmAdOIiPqDSU8fIeO0NdPnvIWRzKLO_a_NLOj5QYm_nZDRe811IiWDPZHQH-O-nq5QcfWGjy4crRhB-Rh27Bx5ZoNzi__DgXz2eI38dk');"></div>
+</div>
+</div>
+</div>
+<!-- Passed Item -->
+<div class="p-4 flex gap-4 items-start">
+<div class="mt-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 p-1 text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Cover block placement</p>
+<p class="text-xs text-slate-500 mt-1">Adequate 25mm cover blocks installed.</p>
+</div>
+</div>
+<!-- Passed Item -->
+<div class="p-4 flex gap-4 items-start">
+<div class="mt-0.5 rounded-full bg-emerald-100 dark:bg-emerald-900/30 p-1 text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Cleanliness of shuttering</p>
+<p class="text-xs text-slate-500 mt-1">Surface is clean and oiled properly.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Manager Review Actions -->
+<div class="lg:col-span-7">
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 h-full flex flex-col">
+<div class="border-b border-slate-200 dark:border-slate-700 px-6 py-4 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
+<h3 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">rate_review</span>
+                            Manager's Review &amp; Remarks
+                        </h3>
+<span class="text-xs text-slate-500 font-medium bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded">Read-Write Mode</span>
+</div>
+<div class="p-6 md:p-8 flex-1 space-y-8">
+<!-- Review Findings Section -->
+<section>
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Review Findings</h4>
+<label class="inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-500"></div>
+<span class="ms-3 text-sm font-medium text-slate-900 dark:text-gray-300">Flag Major Non-Conformity (NCR)</span>
+</label>
+</div>
+<!-- Rich Text Area Mockup -->
+<div class="border border-slate-300 dark:border-slate-600 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-shadow">
+<div class="bg-slate-50 dark:bg-slate-700 border-b border-slate-300 dark:border-slate-600 px-3 py-2 flex gap-2">
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<div class="h-6 w-px bg-slate-300 dark:bg-slate-500 mx-1"></div>
+<button class="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"><span class="material-symbols-outlined text-[20px]">attach_file</span></button>
+</div>
+<textarea class="w-full p-4 min-h-[160px] bg-white dark:bg-slate-800 border-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 resize-none text-base" placeholder="Enter detailed remarks here. Explain the reason for rejection or approval conditions..."></textarea>
+</div>
+</section>
+<!-- Cost & Documents Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Cost Implication -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Cost Implication (₹)</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="text-slate-500 font-semibold">₹</span>
+</div>
+<input class="block w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 pl-8 pr-12 py-2.5 text-slate-900 dark:text-white focus:border-primary focus:ring-primary sm:text-sm shadow-sm" placeholder="0.00" type="text" value="25,000"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+<span class="text-slate-400 text-xs">INR</span>
+</div>
+</div>
+<p class="text-xs text-slate-500">Estimated cost for rework/penalty.</p>
+</div>
+<!-- Supporting Docs -->
+<div class="space-y-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300">Attachments</label>
+<div class="flex items-center justify-center w-full">
+<label class="flex flex-col items-center justify-center w-full h-24 border-2 border-slate-300 border-dashed rounded-lg cursor-pointer bg-slate-50 dark:hover:bg-bray-800 dark:bg-slate-700 hover:bg-slate-100 dark:border-slate-600 dark:hover:border-slate-500 dark:hover:bg-slate-600 transition-colors" for="dropzone-file">
+<div class="flex flex-col items-center justify-center pt-5 pb-6">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-xl">cloud_upload</span>
+<p class="text-xs font-medium">Click to upload or drag and drop</p>
+</div>
+<p class="text-[10px] text-slate-400 mt-1">SVG, PNG, JPG or PDF</p>
+</div>
+<input class="hidden" id="dropzone-file" type="file"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Attachments Preview List -->
+<div class="space-y-3">
+<h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Uploaded Evidence</h4>
+<div class="flex flex-wrap gap-3">
+<div class="group relative w-24 h-24 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110" data-alt="Construction site close up showing concrete texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDruJTbBy0zNUgVamNP-7AjIVvDFphEUO6d6PmILWtw2rhatsU9HW0lc0IP8YxIM_-9rmcmxodkAv_vNT1F7Qbqy-m0BYa19dhNTkF7sZ5Sk85xmF8L9T6wAmf4W17heLl4mIRoOK4H4-k3WTmcpnf1F2zvSK-uTpYEj-ovHL5xVwFa_dBux05SQw1NeTflhdRuTDtmDfSLjD-WSXiC5e6fBH4VGx1033XC6_LvAUY39q-QafqyIJNoowzlmqHOXCcN9szdiRcyjnY');"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white hover:text-primary"><span class="material-symbols-outlined">visibility</span></button>
+</div>
+</div>
+<div class="group relative w-24 h-24 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+<div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110" data-alt="Architectural drawing detail on paper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBleBbvlA8xeZQzUa2PSRbwFCar9cKextzqIFH7aSfDC93eoWaywNS1MSQPeNUye4Vw1LlkZlM4Z13U3_-HKztX5rZI12dVJIUGJuyoDGtxwhHLg2Z45CEj6mae1kvk4T1upIOaPdv6a-WwrsenyvMzLwvmOqpXteFC7BfYdPxNduKOXK8IKIaMgM2w4wNwf0sK-oz30PMm535aszExC3jahxCSOwUDOtel1WcJguRUsyrCroLt_yxL5tGoCoQ4FojUljS8q8OPENU');"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="text-white hover:text-primary"><span class="material-symbols-outlined">visibility</span></button>
+</div>
+</div>
+<div class="flex items-center justify-center w-24 h-24 rounded-lg bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-400">
+<span class="material-symbols-outlined text-3xl">picture_as_pdf</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 p-6 rounded-b-xl flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span class="material-symbols-outlined text-lg">info</span>
+<span>Action will be recorded in audit log.</span>
+</div>
+<div class="flex w-full sm:w-auto gap-3">
+<button class="flex-1 sm:flex-none px-5 py-2.5 rounded-lg border border-red-200 bg-white text-red-600 hover:bg-red-50 font-bold text-sm transition-colors shadow-sm focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+                                Reject &amp; Rework
+                            </button>
+<button class="flex-1 sm:flex-none px-5 py-2.5 rounded-lg border border-amber-200 bg-white text-amber-600 hover:bg-amber-50 font-bold text-sm transition-colors shadow-sm focus:ring-2 focus:ring-amber-500 focus:ring-offset-2">
+                                Request Changes
+                            </button>
+<button class="flex-1 sm:flex-none px-8 py-2.5 rounded-lg bg-primary text-white hover:bg-blue-600 font-bold text-sm transition-colors shadow-md shadow-primary/30 focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                                Approve
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Trail Section -->
+<div class="mt-8 max-w-4xl mx-auto">
+<div class="flex items-center gap-2 mb-4 text-slate-400 cursor-pointer hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">expand_more</span>
+<span class="text-sm font-semibold uppercase tracking-wider">Audit History</span>
+</div>
+<!-- Timeline -->
+<div class="border-l-2 border-slate-200 dark:border-slate-700 ml-3 space-y-8 pl-8 pb-8">
+<!-- Timeline Item -->
+<div class="relative">
+<div class="absolute -left-[41px] bg-white dark:bg-slate-900 p-1">
+<div class="size-4 rounded-full bg-slate-300 dark:bg-slate-600 border-2 border-white dark:border-slate-900"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Inspection Report Submitted</p>
+<span class="text-xs text-slate-500 tabular-nums">24-10-2023, 10:30 AM</span>
+</div>
+<p class="text-sm text-slate-500 mt-1">Submitted by Rahul Sharma. 8/10 items checked passed.</p>
+</div>
+<!-- Timeline Item -->
+<div class="relative">
+<div class="absolute -left-[41px] bg-white dark:bg-slate-900 p-1">
+<div class="size-4 rounded-full bg-slate-300 dark:bg-slate-600 border-2 border-white dark:border-slate-900"></div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">Review Started</p>
+<span class="text-xs text-slate-500 tabular-nums">25-10-2023, 09:15 AM</span>
+</div>
+<p class="text-sm text-slate-500 mt-1">Manager (You) opened the report for review.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

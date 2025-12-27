@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Role &amp; Access Management - BuildTrack India</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-white font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-[#1a2632] border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between z-10 hidden lg:flex">
+<div class="flex flex-col h-full">
+<!-- Branding -->
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-lg h-10 w-10 shadow-sm" data-alt="Abstract geometric logo in blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBzdfa7OwB2dotT3RLmq0_jiA9y1qwJVE1vhlUg44TWZYjf_qvD18oqhlgvSrhQteskepPblNXdG54L9KCqlAk4TWAo_tYrcmxedwAROklO0nN86FQKk5xhMa6vh47XH0YmYQf9zWgeTwQu4fkz0IbKX_-TSjOgtCk-pUtu0NVBFnf8Ak8aWYsKiMznmOAApmC_u9RYNXLwcoNY8WRUa9n_NNAWGDrivPC_ON0hr2oiTzTqsr8HIfAI14uVW9KqKiKfuV14ycSXHbA");'></div>
+<div class="flex flex-col">
+<h1 class="text-[#0d141b] dark:text-white text-base font-bold leading-tight">BuildTrack India</h1>
+<p class="text-[#4c739a] text-xs font-medium">Admin Console</p>
+</div>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex-1 px-4 py-6 flex flex-col gap-1 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary">grid_view</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary">apartment</span>
+<span class="text-sm font-medium">Projects</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary">shopping_cart</span>
+<span class="text-sm font-medium">Procurement</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary">payments</span>
+<span class="text-sm font-medium">Finances</span>
+</a>
+<div class="my-2 border-t border-slate-100 dark:border-slate-700"></div>
+<p class="px-3 py-2 text-xs font-semibold text-[#4c739a] uppercase tracking-wider">Administration</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined text-[22px] font-variation-settings-'FILL'1">group</span>
+<span class="text-sm font-bold">Users &amp; Roles</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#4c739a] hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[22px] group-hover:text-primary">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<!-- User Profile Snippet -->
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+<div class="h-9 w-9 rounded-full bg-slate-200 bg-center bg-cover" data-alt="Portrait of Admin User" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBk_1t1cbEvMuV7wvV8jkB_C68N18lHqSpc0wZekIMn8koRzeW-xUBT7fI_I53OlI0LaizWZXLCncOSMkk7GHxrUQrP_grQ7AOKFP8tLEWQqGw22xlcyfnGl39vx5gdnPxwNgoj019Pl5_6iYqILnalWJ0-MmM7pmD0M67ZdVk53uh9nRtmK6nYmjFWGLfo2x-FGoXJbG1xaJoD7FXUBN7XydcHGkVoO54TWpHn7AoqxRKL1AstGS-NawCt8j2Kp9dQT9A5xctDDeQ");'></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-bold truncate text-[#0d141b] dark:text-white">Arjun Mehta</span>
+<span class="text-xs text-[#4c739a] truncate">Super Admin</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 ml-auto text-sm">expand_more</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 h-full overflow-y-auto bg-background-light dark:bg-background-dark relative flex flex-col">
+<!-- Mobile Header Placeholder -->
+<div class="lg:hidden bg-white dark:bg-[#1a2632] p-4 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 sticky top-0 z-20">
+<div class="font-bold text-lg text-primary">BuildTrack India</div>
+<button class="p-2 text-slate-500"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div class="container mx-auto max-w-[1400px] p-4 md:p-8 flex flex-col gap-6 flex-1">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 text-sm">
+<a class="text-[#4c739a] hover:text-primary transition-colors font-medium" href="#">Home</a>
+<span class="text-[#4c739a] font-medium">/</span>
+<a class="text-[#4c739a] hover:text-primary transition-colors font-medium" href="#">Settings</a>
+<span class="text-[#4c739a] font-medium">/</span>
+<span class="text-slate-900 dark:text-slate-100 font-semibold">User Role &amp; Access Management</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+<div class="flex flex-col gap-2 max-w-2xl">
+<h1 class="text-[#0d141b] dark:text-white text-3xl md:text-4xl font-extrabold tracking-tight">User Role &amp; Access Management</h1>
+<p class="text-[#4c739a] text-base font-normal leading-relaxed">Manage user permissions, assign roles, and control access levels across all project sites in India.</p>
+</div>
+<button class="flex-shrink-0 flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg shadow-sm shadow-blue-200 dark:shadow-none transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="text-sm font-bold">Add New User</span>
+</button>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<p class="text-[#4c739a] text-sm font-medium">Total Users</p>
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">142</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-green-50 dark:bg-green-900/20 text-green-600 flex items-center justify-center">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<p class="text-[#4c739a] text-sm font-medium">Active Managers</p>
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">18</p>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2632] p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-4">
+<div class="h-12 w-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 text-orange-600 flex items-center justify-center">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-[#4c739a] text-sm font-medium">Pending Invites</p>
+<p class="text-[#0d141b] dark:text-white text-2xl font-bold">5</p>
+</div>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-4">
+<div class="flex flex-col xl:flex-row gap-4 justify-between">
+<!-- Search -->
+<div class="flex-1 min-w-[300px]">
+<label class="relative block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 pl-10 pr-4 text-sm placeholder:text-slate-400 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-[#0d141b] dark:text-white" placeholder="Search by Name, Employee ID, or Phone Number..." type="text"/>
+</label>
+</div>
+<!-- Dropdown Filters -->
+<div class="flex flex-wrap md:flex-nowrap gap-3">
+<div class="relative min-w-[160px] flex-1 md:flex-none">
+<select class="w-full appearance-none bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-[#0d141b] dark:text-white text-sm rounded-lg py-2.5 pl-3 pr-10 focus:ring-primary focus:border-primary cursor-pointer">
+<option value="">All Roles</option>
+<option value="Admin">Admin</option>
+<option value="Project Owner">Project Owner</option>
+<option value="Site Manager">Site Manager</option>
+<option value="Structural Engineer">Structural Engineer</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<div class="relative min-w-[160px] flex-1 md:flex-none">
+<select class="w-full appearance-none bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-[#0d141b] dark:text-white text-sm rounded-lg py-2.5 pl-3 pr-10 focus:ring-primary focus:border-primary cursor-pointer">
+<option value="">All Statuses</option>
+<option value="Active">Active</option>
+<option value="Inactive">Inactive</option>
+<option value="Revoked">Revoked</option>
+<option value="Pending">Pending</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<div class="relative min-w-[180px] flex-1 md:flex-none">
+<select class="w-full appearance-none bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-[#0d141b] dark:text-white text-sm rounded-lg py-2.5 pl-3 pr-10 focus:ring-primary focus:border-primary cursor-pointer">
+<option value="">All Sites</option>
+<option value="Mumbai HQ">Mumbai HQ</option>
+<option value="Bangalore - Whitefield">Bangalore - Whitefield</option>
+<option value="Pune Site A">Pune Site A</option>
+<option value="Delhi - Dwarka">Delhi - Dwarka</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-slate-500">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<button class="px-3 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 hover:text-primary hover:border-primary transition-colors tooltip" title="Export CSV">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Users Table -->
+<div class="bg-white dark:bg-[#1a2632] rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col flex-1 min-h-[500px]">
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+<th class="p-4 w-10">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer" type="checkbox"/>
+</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Employee</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Role</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Site / Dept</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Contact</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Status</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Last Login</th>
+<th class="p-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<!-- User 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-center bg-cover" data-alt="Portrait of Rajesh Kumar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1Gd1HtFEOVsDdBJ2KqvzUadvU-O3A3Bzzgxco1RPrzvj0HWVAixk1D9rd_-YndoU_E4ldU7-eXuyUjyORcXxgkKiVL6dp_E7-qDzJ95h_l7gLNTw-xFAFM-gFScTaoFaklEaPzvZxRn2q424UpxTHpC5AjS65HNbsrX02FEy94ou0y26lLupmEt2rO5o-JElli7dzUPa1dI0JU7yKsIlzoqod3QyBS_ftO78jVWo61L2NUqHl649Vyob-Y_mNd0W0_KVGWKO1OUk");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Rajesh Kumar</span>
+<span class="text-xs text-slate-500">ID: BT-1024</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
+                                            Admin
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white font-medium">Headquarters</span>
+<span class="text-xs text-slate-500">Mumbai, MH</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<a class="text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="mailto:rajesh.k@buildtrack.in">rajesh.k@buildtrack.in</a>
+<span class="text-xs text-slate-400">+91 98765 12345</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-4 text-sm text-slate-500">
+                                        12-10-2023
+                                    </td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors" title="Edit Role">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors" title="Revoke Access">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-center bg-cover" data-alt="Portrait of Anjali Gupta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLoyik6RCee8aMeVdP6RjhlOOA8SFFar5yVvi2wiSRvUPy_u-oekokFmbqntpxiMGbv01-efUDgJolDUsxUp7rfxYyb7LqmQnb-oQCm1olK2WqTQuWqfzcYOXVrRD4LcempW0_hJnZgfLZgqQxehhhavQ0lGZ6TXvHjvjWnVvfmEWVm3TlQO2SHWxczByHN52wjk2YcKVGYQpVg3zbXJEwkiZrnT4ceNCpv5IO3CA3fgaoAcALZaTz6RZDFn6ztHBWbsfr4BDgfoY");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Anjali Gupta</span>
+<span class="text-xs text-slate-500">ID: BT-1156</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                                            Project Owner
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white font-medium">Whitefield Site</span>
+<span class="text-xs text-slate-500">Bangalore, KA</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<a class="text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="mailto:anjali.g@buildtrack.in">anjali.g@buildtrack.in</a>
+<span class="text-xs text-slate-400">+91 98765 67890</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-4 text-sm text-slate-500">
+                                        14-10-2023
+                                    </td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm border border-amber-200">
+                                                VS
+                                            </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Vikram Singh</span>
+<span class="text-xs text-slate-500">ID: BT-2103</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
+                                            Site Manager
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white font-medium">Dwarka Sec-21</span>
+<span class="text-xs text-slate-500">New Delhi, DL</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<a class="text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="mailto:vikram.s@buildtrack.in">vikram.s@buildtrack.in</a>
+<span class="text-xs text-slate-400">+91 99887 77665</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                                            Pending
+                                        </span>
+</td>
+<td class="p-4 text-sm text-slate-500">
+                                        -
+                                    </td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-slate-200 bg-center bg-cover" data-alt="Portrait of Priya Desai" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJPURDDy_tfNw6XJvMbK7xM2Lr_qx0KMhKmjOPNm4QW4lp0DRWglZ5fyf4ofXiPwClxSO7XnDltQJx1AGnhfuDZSGI-rurg8-GqdS8ual-uJFQsy8-4h_LTTTTP81mx1ktvfU_75z5psUC_Db8ZwnZyCem6AwPbBMjwLUGKL2QnNaZw5oFRtbTk2HSjfyUaHH0VYGMAimpCi4n9mPr4Ns4-KDOzH9AT5JQ73KQdewB9odri0oiVvdajoJHCE53vAsUs2_lfF-Jm4o");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Priya Desai</span>
+<span class="text-xs text-slate-500">ID: BT-1892</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
+                                            Structural Engineer
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white font-medium">Pune Site A</span>
+<span class="text-xs text-slate-500">Pune, MH</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<a class="text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="mailto:priya.d@buildtrack.in">priya.d@buildtrack.in</a>
+<span class="text-xs text-slate-400">+91 88990 00112</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border border-red-200 dark:border-red-800">
+<span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                            Revoked
+                                        </span>
+</td>
+<td class="p-4 text-sm text-slate-500">
+                                        20-09-2023
+                                    </td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- User 5 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group">
+<td class="p-4">
+<input class="rounded border-slate-300 text-primary focus:ring-primary/20 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" type="checkbox"/>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm border border-blue-200">
+                                                AP
+                                            </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#0d141b] dark:text-white">Amit Patel</span>
+<span class="text-xs text-slate-500">ID: BT-2201</span>
+</div>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
+                                            Accountant
+                                        </span>
+</td>
+<td class="p-4">
+<div class="flex flex-col">
+<span class="text-sm text-[#0d141b] dark:text-white font-medium">Headquarters</span>
+<span class="text-xs text-slate-500">Mumbai, MH</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-col gap-0.5">
+<a class="text-sm text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="mailto:amit.p@buildtrack.in">amit.p@buildtrack.in</a>
+<span class="text-xs text-slate-400">+91 77665 55443</span>
+</div>
+</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 border border-green-200 dark:border-green-800">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="p-4 text-sm text-slate-500">
+                                        15-10-2023
+                                    </td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-[#1a2632] flex items-center justify-between">
+<div class="text-sm text-slate-500 dark:text-slate-400">
+                            Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span class="font-medium text-slate-900 dark:text-white">5</span> of <span class="font-medium text-slate-900 dark:text-white">142</span> users
+                        </div>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 border border-slate-300 dark:border-slate-600 rounded text-sm font-medium text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50" disabled="">
+                                Previous
+                            </button>
+<button class="px-3 py-1.5 border border-slate-300 dark:border-slate-600 rounded text-sm font-medium text-primary hover:bg-slate-50 dark:hover:bg-slate-700">
+                                Next
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
