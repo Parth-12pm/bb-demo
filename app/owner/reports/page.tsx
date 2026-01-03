@@ -14,8 +14,6 @@ const reportTypes = [
   { name: "Financial Summary", desc: "Budget utilization and expense breakdown", icon: "currency_rupee", format: "Excel" },
   { name: "Workforce Report", desc: "Attendance, productivity, and labor costs", icon: "groups", format: "PDF" },
   { name: "Material Consumption", desc: "Inventory usage and procurement status", icon: "inventory_2", format: "Excel" },
-  { name: "Quality Audit Report", desc: "Inspection results and compliance status", icon: "verified_user", format: "PDF" },
-  { name: "Delay Analysis", desc: "Root cause analysis of project delays", icon: "schedule", format: "PDF" },
 ];
 
 const recentReports = [
@@ -76,6 +74,44 @@ export default function OwnerReports() {
                 <span className="material-symbols-outlined text-lg">table_view</span>
                 Export Excel
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bill & Cost Records Section */}
+        <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+          <div className="p-5 border-b border-slate-100 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-green-100 text-green-600 flex items-center justify-center">
+                <span className="material-symbols-outlined">receipt_long</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-900">Bill & Cost Records</h3>
+                <p className="text-sm text-slate-500">All vendor and labour records centrally stored</p>
+              </div>
+            </div>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-sm font-medium border border-green-200">
+              <span className="material-symbols-outlined text-sm">verified</span>
+              Data Verified
+            </span>
+          </div>
+          <div className="p-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-slate-50 rounded-lg p-4 text-center">
+                <p className="text-2xl font-bold text-slate-900">248</p>
+                <p className="text-sm text-slate-500">Bills Tracked</p>
+              </div>
+              <div className="bg-slate-50 rounded-lg p-4 text-center">
+                <p className="text-2xl font-bold text-green-600">₹ 2.4 Cr</p>
+                <p className="text-sm text-slate-500">Total Recorded Cost</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg border border-blue-100">
+              <span className="material-symbols-outlined text-blue-600 mt-0.5">info</span>
+              <div>
+                <p className="text-sm font-medium text-blue-800">Execution-Based Cost Mapping</p>
+                <p className="text-xs text-blue-600 leading-relaxed">Daily DPR and attendance data mapped to planned BOQ quantities for budget tracking</p>
+              </div>
             </div>
           </div>
         </div>

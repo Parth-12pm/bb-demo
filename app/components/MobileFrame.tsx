@@ -10,7 +10,7 @@ interface MobileFrameProps {
 
 export default function MobileFrame({ 
   children, 
-  title = "BuildTrack",
+  title = "BharatBuild",
   showOfflineIndicator = false 
 }: MobileFrameProps) {
   return (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BuildTrack India - Construction Field Management",
+  title: "BharatBuild - Construction Field Management",
   description: "Interactive prototype for construction field management system with role-based workflows",
 };
 

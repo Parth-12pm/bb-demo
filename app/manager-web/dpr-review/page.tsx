@@ -47,7 +47,7 @@ export default function ManagerDPRReview() {
     <DesktopLayout
       title="DPR Review"
       subtitle="Review and approve Daily Progress Reports with photo verification"
-      brandName="BuildTrack India"
+      brandName="BharatBuild"
       brandSubtitle="Manager Console"
       navItems={navItems}
       userInfo={{ name: "Vikram Singh", role: "Project Manager" }}

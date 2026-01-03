@@ -22,7 +22,7 @@ export default function ManagerAttendance() {
     <DesktopLayout
       title="Labor Attendance Review"
       subtitle="View workforce attendance data (Site Engineer approves entries)"
-      brandName="BuildTrack India"
+      brandName="BharatBuild"
       brandSubtitle="Manager Console"
       navItems={navItems}
       userInfo={{ name: "Vikram Singh", role: "Project Manager" }}

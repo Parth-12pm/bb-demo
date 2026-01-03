@@ -21,7 +21,7 @@ export default function ManagerApprovals() {
     <DesktopLayout
       title="Material & Task Approvals"
       subtitle="Review and approve material requests and task completions"
-      brandName="BuildTrack India"
+      brandName="BharatBuild"
       brandSubtitle="Manager Console"
       navItems={navItems}
       userInfo={{ name: "Vikram Singh", role: "Project Manager" }}

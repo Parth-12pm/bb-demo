@@ -28,7 +28,7 @@ export default function DesktopLayout({
   children,
   title,
   subtitle,
-  brandName = "BuildTrack India",
+  brandName = "BharatBuild",
   brandSubtitle = "Dashboard",
   navItems,
   userInfo = { name: "Demo User", role: "Prototype Mode" }

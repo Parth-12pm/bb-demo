@@ -86,7 +86,7 @@ export default function Home() {
               <span className="material-symbols-outlined text-white text-xl">construction</span>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-900">BuildTrack India</h1>
+              <h1 className="text-lg font-bold text-slate-900">BharatBuild</h1>
               <p className="text-xs text-slate-500">Construction Field Management</p>
             </div>
           </div>
@@ -103,11 +103,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
             Role-Based Workflow
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#136dec] to-indigo-600">
-              Interactive Prototype
+              Prototype
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-            Experience the complete user flow from <strong>Site → Manager → Owner</strong>.
+            Experience the complete user flow from <strong>Labor → Site Engineer → Manager → Owner</strong>.
             <br />
             Select a role below to explore its dedicated journey.
           </p>
@@ -115,6 +115,11 @@ export default function Home() {
 
         {/* Data Flow Diagram */}
         <div className="mt-12 flex items-center justify-center gap-3 text-sm animate-slide-up">
+          <div className="flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-full border border-orange-200">
+            <span className="material-symbols-outlined text-orange-600 text-lg">badge</span>
+            <span className="font-medium text-orange-700">Labor</span>
+          </div>  
+          <span className="material-symbols-outlined text-slate-300">arrow_forward</span>
           <div className="flex items-center gap-2 px-4 py-2 bg-orange-50 rounded-full border border-orange-200">
             <span className="material-symbols-outlined text-orange-600 text-lg">engineering</span>
             <span className="font-medium text-orange-700">Site Engineer</span>
@@ -188,7 +193,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm text-slate-500">
-          <p>BuildTrack India • Construction Management Prototype</p>
+          <p>BharatBuild • Construction Management Prototype</p>
           <p>Currency: ₹ INR • Light Theme Only</p>
         </div>
       </footer>

@@ -32,7 +32,7 @@ export default function ManagerBudget() {
     <DesktopLayout
       title="Budget & Variance"
       subtitle="Monitor budget utilization and cost variance"
-      brandName="BuildTrack India"
+      brandName="BharatBuild"
       brandSubtitle="Manager Console"
       navItems={navItems}
       userInfo={{ name: "Vikram Singh", role: "Project Manager" }}

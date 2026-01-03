@@ -21,7 +21,7 @@ export default function ManagerWebProjects() {
     <DesktopLayout
       title="Project Dashboard"
       subtitle="Review DPRs, approve materials, and monitor attendance"
-      brandName="BuildTrack India"
+      brandName="BharatBuild"
       brandSubtitle="Manager Console"
       navItems={navItems}
       userInfo={{ name: "Vikram Singh", role: "Project Manager" }}
