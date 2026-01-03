@@ -15,13 +15,6 @@ export default function LaborLogin() {
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto">
-          {/* Logo Area */}
-          <div className="flex justify-center py-6">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center shadow-lg border-4 border-white">
-              <span className="material-symbols-outlined text-amber-700 text-4xl">hard_hat</span>
-            </div>
-          </div>
-
           {/* Header Text */}
           <div className="flex flex-col items-center">
             <h2 className="text-2xl font-bold text-slate-900 text-center px-4">
